@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الطالب الذكية - الملاحظات السريعة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- الشريط العلوي -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>لوحة الطالب الذكية</h1>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">م</div>
+                <div>
+                    <h3>الطالب : محمد الباقر</h3>
+                    <p>القسم : تربية لغة أنجليزية</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- التنقل -->
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>الصفحة الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tasks.html" class="nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>إدارة الواجبات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="grades.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>دفتر الدرجات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notes.html" class="nav-link active">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>ملاحظات سريعة</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="policies.html" class="nav-link">
+                        <i class="fas fa-file-contract"></i>
+                        <span>سياسات الاستخدام</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main>
+            <div class="notes-page">
+                <div class="notes-sidebar">
+                    <div class="sidebar-header">
+                        <h3><i class="fas fa-sticky-note"></i> الملاحظات</h3>
+                        <button class="btn btn-small" id="new-note">
+                            <i class="fas fa-plus"></i>
+                            جديد
+                        </button>
+                    </div>
+                    
+                    <!-- البحث في الملاحظات -->
+                    <div class="search-box">
+                        <input type="text" id="search-notes" placeholder="ابحث في الملاحظات...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <!-- فلاتر الملاحظات -->
+                    <div class="notes-filters">
+                        <button class="filter-btn active" data-filter="all">الكل</button>
+                        <button class="filter-btn" data-filter="recent">الأحدث</button>
+                        <button class="filter-btn" data-filter="important">مهمة</button>
+                        <button class="filter-btn" data-filter="lecture">محاضرات</button>
+                    </div>
+                    
+                    <!-- قائمة الملاحظات -->
+                    <div class="notes-list-sidebar" id="notes-list-sidebar">
+                        <!-- سيتم إضافة الملاحظات هنا ديناميكيًا -->
+                        <div class="empty-state-sidebar">
+                            <i class="fas fa-sticky-note"></i>
+                            <p>لا توجد ملاحظات</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="notes-main">
+                    <div class="notes-editor" id="notes-editor">
+                        <div class="editor-header">
+                            <div class="form-group note-title-input">
+                                <input type="text" id="note-title" placeholder="أدخل عنوان الملاحظة">
+                            </div>
+                            
+                            <div class="editor-actions">
+                                <button class="btn-icon" id="toggle-important" title="علامة مهم">
+                                    <i class="far fa-star"></i>
+                                </button>
+                                <button class="btn-icon" id="set-category" title="تصنيف">
+                                    <i class="fas fa-tag"></i>
+                                </button>
+                                <div class="category-dropdown hidden" id="category-dropdown">
+                                    <button class="category-option" data-category="lecture">محاضرات</button>
+                                    <button class="category-option" data-category="homework">واجبات</button>
+                                    <button class="category-option" data-category="exam">امتحانات</button>
+                                    <button class="category-option" data-category="personal">شخصية</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-toolbar">
+                            <div class="toolbar-group">
+                                <button class="tool-btn" data-format="bold" title="غامق">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button class="tool-btn" data-format="italic" title="مائل">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button class="tool-btn" data-format="underline" title="تحته خط">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button class="tool-btn" data-format="list" title="قائمة نقطية">
+                                    <i class="fas fa-list-ul"></i>
+                                </button>
+                                <button class="tool-btn" data-format="list-ol" title="قائمة رقمية">
+                                    <i class="fas fa-list-ol"></i>
+                                </button>
+                                <button class="tool-btn" data-format="quote" title="اقتباس">
+                                    <i class="fas fa-quote-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button class="tool-btn" data-format="fontSize" title="حجم الخط">
+                                    <i class="fas fa-text-height"></i>
+                                </button>
+                                <div class="font-size-dropdown hidden">
+                                    <button data-size="12">صغير</button>
+                                    <button data-size="16">متوسط</button>
+                                    <button data-size="20">كبير</button>
+                                </div>
+                                <button class="tool-btn" id="text-color" title="لون النص">
+                                    <i class="fas fa-palette"></i>
+                                </button>
+                                <input type="color" id="color-picker" class="hidden">
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button class="tool-btn" id="insert-link" title="إضافة رابط">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <div class="link-dropdown hidden" id="link-dropdown" role="dialog" aria-hidden="true">
+                                    <div class="dropdown-inner">
+                                        <label for="link-url">أدخل رابطًا:</label>
+                                        <input type="url" id="link-url" placeholder="https://example.com">
+                                        <label for="link-text">نص الرابط (اختياري):</label>
+                                        <input type="text" id="link-text" placeholder="نص مرئي للرابط">
+                                        <div class="dropdown-actions">
+                                            <button class="btn" id="apply-link"><i class="fas fa-check"></i> إدراج</button>
+                                            <button class="btn btn-cancel" id="cancel-link"><i class="fas fa-times"></i> إلغاء</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="tool-btn" id="insert-image" title="إضافة صورة">
+                                    <i class="fas fa-image"></i>
+                                </button>
+                                <div class="image-dropdown hidden" id="image-dropdown" role="dialog" aria-hidden="true">
+                                    <div class="dropdown-inner">
+                                        <label>أدخل رابط الصورة:</label>
+                                        <input type="url" id="image-url" placeholder="https://example.com/image.jpg">
+                                        <div class="or-separator">أو</div>
+                                        <label for="image-file">اختر ملفًا من جهازك:</label>
+                                        <input type="file" id="image-file" accept="image/*">
+                                        <div class="image-preview-wrapper hidden" id="image-preview-wrapper">
+                                            <label>معاينة:</label>
+                                            <img id="image-preview" alt="معاينة الصورة" />
+                                        </div>
+                                        <div class="dropdown-actions">
+                                            <button class="btn" id="apply-image"><i class="fas fa-check"></i> إدراج</button>
+                                            <button class="btn btn-cancel" id="cancel-image"><i class="fas fa-times"></i> إلغاء</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-content">
+                            <div class="note-content" id="note-content" contenteditable="true" placeholder="اكتب ملاحظتك هنا..."></div>
+                        </div>
+                        
+                        <div class="editor-footer">
+                            <div class="editor-info">
+                                <span id="char-count">0 حرف</span>
+                                <span id="word-count">0 كلمة</span>
+                            </div>
+                            
+                            <div class="editor-buttons">
+                                <button class="btn btn-cancel" id="cancel-note">
+                                    <i class="fas fa-times"></i>
+                                    إلغاء
+                                </button>
+                                <button class="btn btn-save" id="save-note">
+                                    <i class="fas fa-save"></i>
+                                    حفظ الملاحظة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- عرض الملاحظة -->
+                    <div class="note-viewer hidden" id="note-viewer">
+                        <div class="note-viewer-header">
+                            <h2 id="viewer-title">عنوان الملاحظة</h2>
+                            <div class="note-meta">
+                                <span id="viewer-date">تاريخ</span>
+                                <span class="note-category" id="viewer-category">فئة</span>
+                                <span class="note-important" id="viewer-important"><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                        
+                        <div class="note-viewer-content" id="viewer-content">
+                            محتوى الملاحظة
+                        </div>
+                        
+                        <div class="note-viewer-actions">
+                            <button class="btn" id="edit-note">
+                                <i class="fas fa-edit"></i>
+                                تعديل
+                            </button>
+                            <button class="btn btn-delete" id="delete-note">
+                                <i class="fas fa-trash"></i>
+                                حذف
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- حالة فارغة -->
+                    <div class="notes-empty-state" id="notes-empty">
+                        <div class="empty-content">
+                            <i class="fas fa-sticky-note"></i>
+                            <h3>لا توجد ملاحظة محددة</h3>
+                            <p>اختر ملاحظة من القائمة أو أنشئ ملاحظة جديدة</p>
+                            <button class="btn" id="create-first-note">
+                                <i class="fas fa-plus"></i>
+                                إنشاء أول ملاحظة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- الفوتر -->
+        <footer>
+            <div class="footer-content">
+                <div class="developer-info">
+                    <h3>تطوير بواسطة : محمد الباقر</h3>
+                    <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
+                    
+                    <div class="social-links">
+                        <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://instagram.com/g6xs0r" class="social-link" target="_blank" title="إنستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/wsl-iq" class="social-link" target="_blank" title="تليغرام">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@wsl.iq" class="social-link" target="_blank" title="تيك توك">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2026 جميع الحقوق محفوظة - لوحة الطالب الذكية.
+                </div>
+
+                <div role="alert" aria-live="polite" style="margin-top:14px;border-radius:12px;padding:14px 16px;background:linear-gradient(90deg,#fff3cd,#ffe8a1);color:#5a3e00;border:1px solid rgba(90,62,0,0.12);box-shadow:0 8px 24px rgba(90,62,0,0.08);font-weight:700;text-align:right;display:flex;align-items:center;gap:12px;">
+                    <span style="font-size:1.2rem;line-height:1;">⚠️</span>
+                    <small style="font-size:0.95rem;line-height:1.4;display:block;">
+                    ملاحظة : هذا العمل مُنجز من قِبل مطوّر مستقل وبمبادرة شخصية هدفها تنظيم المحتوى وتقديمه بصورة أوضح وأكثر احتراف المشروع غير تابع لأي جهة رسمية وتم العمل عليه بدافع الاهتمام والترتيب وتحسين تجربة المستخدم.
+                    </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/notes.js"></script>
+</body>
+</html>

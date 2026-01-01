@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسات الاستخدام - لوحة الطالب الذكية</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #7209b7;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --font-arabic: 'Cairo', sans-serif;
+            --font-english: 'Poppins', sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #5a7dff;
+            --secondary-color: #4a1dc4;
+            --accent-color: #8a2be2;
+            --light-color: #121212;
+            --dark-color: #f8f9fa;
+            --gray-color: #adb5bd;
+            --light-gray: #2d2d2d;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-arabic);
+            background: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.8;
+            transition: var(--transition);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(114, 9, 183, 0.05) 0%, transparent 20%);
+        }
+
+        body[dir="ltr"] {
+            font-family: var(--font-english);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            padding: 2rem 0;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 60%, rgba(255,255,255,0.1) 100%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .policies-content {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .policies-nav {
+            width: 280px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        [data-theme="dark"] .nav-card {
+            background: rgba(40, 40, 40, 0.85);
+        }
+
+        .nav-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--dark-color);
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: var(--light-gray);
+            border-left-color: var(--primary-color);
+            transform: translateX(-5px);
+        }
+
+        .nav-link.active {
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .nav-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .policies-main {
+            flex: 1;
+        }
+
+        .policy-section {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .policy-section {
+            background: rgba(40, 40, 40, 0.85);
+        }
+
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            flex: 1;
+        }
+
+        .last-updated {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .policy-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .policy-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+            padding-right: 1rem;
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .policy-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        .policy-content p {
+            margin-bottom: 1.2rem;
+            color: var(--dark-color);
+        }
+
+        .policy-content ul, .policy-content ol {
+            margin: 1.5rem 0;
+            padding-right: 2rem;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .policy-content li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(67, 97, 238, 0.1);
+            border-right: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+
+        .important-note {
+            background: rgba(255, 193, 7, 0.1);
+            border-right: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .developer-section {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(58, 12, 163, 0.1) 100%);
+            border-radius: var(--border-radius);
+            margin-top: 3rem;
+        }
+
+        .developer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .developer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: white;
+            border: 1px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--light-gray);
+            margin-top: 3rem;
+            color: var(--gray-color);
+        }
+
+        .policy-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .policy-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .policies-content {
+                flex-direction: column;
+            }
+            
+            .policies-nav {
+                width: 100%;
+                position: static;
+            }
+            
+            .nav-card {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .policy-section {
+                padding: 1.5rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .policy-content {
+                font-size: 1rem;
+            }
+        }
+
+        @media print {
+            .header, .policies-nav, .back-button, .developer-section, .footer {
+                display: none;
+            }
+            
+            .policy-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="main-title">سياسات الاستخدام والخصوصية</h1>
+                <p class="subtitle">نظرة شاملة على السياسات والقواعد المنظمة لاستخدام تطبيق لوحة الطالب الذكية</p>
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-right"></i>
+                    العودة إلى الصفحة الرئيسية
+                </a>
+            </div>
+        </header>
+
+        <div class="policies-content">
+            <nav class="policies-nav">
+                <div class="nav-card">
+                    <h2 class="nav-title">
+                        <i class="fas fa-file-contract"></i>
+                        السياسات
+                    </h2>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#license" class="nav-link active">
+                                <i class="fas fa-balance-scale"></i>
+                                الترخيص
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#terms" class="nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                سياسة الاستخدام
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#privacy" class="nav-link">
+                                <i class="fas fa-shield-alt"></i>
+                                سياسة الخصوصية
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#conduct" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                قواعد السلوك
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contribution" class="nav-link">
+                                <i class="fas fa-code-branch"></i>
+                                سياسة المساهمة
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="policies-main">
+                <section id="license" class="policy-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h2 class="section-title">ترخيص البرنامج</h2>
+                        <span class="last-updated">آخر تحديث : ديسمبر 2026</span>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <div class="highlight-box">
+                            <p><strong>📝 ملاحظة هامة:</strong> هذا التطبيق مفتوح المصدر ومجاني تماماً للاستخدام الشخصي والأكاديمي.</p>
+                        </div>
+                        
+                        <h3>1. حقوق الملكية</h3>
+                        <p>يخضع تطبيق "جدول المحاضرات الأسبوعي" للترخيص التالي:</p>
+                        
+                        <h4>1.1 ترخيص MIT</h4>
+                        <p>يتم توزيع هذا البرنامج بموجب ترخيص MIT، مما يعني:</p>
+                        <ul>
+                            <li>حق الاستخدام المجاني لأي غرض (شخصي، تجاري، أكاديمي)</li>
+                            <li>حق النسخ والتعديل على الشفرة المصدرية</li>
+                            <li>حق إعادة التوزيع</li>
+                            <li>حق دمج البرنامج مع برامج أخرى</li>
+                        </ul>
+                        
+                        <h4>1.2 القيود</h4>
+                        <ul>
+                            <li>يجب تضمين إشعار حقوق الملكية الأصلي في جميع النسخ</li>
+                            <li>يجب تضمين نص الترخيص الكامل في جميع التوزيعات</li>
+                            <li>البرنامج يُقدم "كما هو" دون أي ضمانات</li>
+                        </ul>
+                        
+                        <h3>2. الاستخدام المسموح</h3>
+                        <p>يمكن استخدام التطبيق للأغراض التالية:</p>
+                        <ul>
+                            <li>الاستخدام الشخصي للطلاب والأساتذة</li>
+                            <li>الاستخدام المؤسسي في الكليات والجامعات</li>
+                            <li>الأغراض التعليمية والبحثية</li>
+                            <li>التطوير والتعديل لأغراض تعليمية</li>
+                        </ul>
+                        
+                        <div class="important-note">
+                            <p><strong>⚠️ تحذير:</strong> يحظر استخدام هذا التطبيق لأغراض غير قانونية أو تضر بمصالح المؤسسات التعليمية.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="terms" class="policy-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h2 class="section-title">سياسة الاستخدام</h2>
+                        <span class="last-updated">آخر تحديث: ديسمبر 2026</span>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <h3>1. شروط الاستخدام العامة</h3>
+                        <p>باتباعك استخدام هذا التطبيق، فإنك توافق على الالتزام بالشروط التالية:</p>
+                        
+                        <h4>1.1 الاستخدام المسؤول</h4>
+                        <ul>
+                            <li>استخدام التطبيق للأغراض التعليمية فقط</li>
+                            <li>عدم محاولة اختراق أو تعطيل عمل التطبيق</li>
+                            <li>عدم استخدام التطبيق لنشر محتوى غير قانوني</li>
+                            <li>الالتزام بقوانين وأنظمة المؤسسة التعليمية</li>
+                        </ul>
+                        
+                        <h4>1.2 دقة المعلومات</h4>
+                        <ul>
+                            <li>يجب التحقق من دقة المعلومات المقدمة في الجدول</li>
+                            <li>المطور غير مسؤول عن أي تغييرات في الجداول الدراسية</li>
+                            <li>يجب الرجوع إلى المصادر الرسمية للتأكد من المعلومات</li>
+                        </ul>
+                        
+                        <h3>2. المسؤوليات</h3>
+                        <p>2.1 مسؤوليات المستخدم:</p>
+                        <ul>
+                            <li>الالتزام بأخلاقيات استخدام التكنولوجيا</li>
+                            <li>عدم إساءة استخدام الخصائص التفاعلية للتطبيق</li>
+                            <li>الإبلاغ عن أي أخطاء أو مشاكل تقنية</li>
+                        </ul>
+                        
+                        <p>2.2 مسؤوليات المطور:</p>
+                        <ul>
+                            <li>توفير تطبيق يعمل بشكل سليم</li>
+                            <li>معالجة المشاكل التقنية المبلغ عنها</li>
+                            <li>حماية خصوصية المستخدمين</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="privacy" class="policy-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2 class="section-title">سياسة الخصوصية <span class="badge">مهم</span></h2>
+                        <span class="last-updated">آخر تحديث: ديسمبر 2026</span>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <div class="highlight-box">
+                            <p><strong>🔒 الأهمية:</strong> هذا التطبيق لا يجمع أو يخزن أو يشارك أي بيانات شخصية للمستخدمين.</p>
+                        </div>
+                        
+                        <h3>1. البيانات التي لا نجمعها</h3>
+                        <p>يؤكد فريق التطوير على أننا <strong>لا نجمع أي من البيانات التالية</strong>:</p>
+                        <ul>
+                            <li>❌ لا أسماء أو معلومات تعريف شخصية</li>
+                            <li>❌ لا عناوين بريد إلكتروني</li>
+                            <li>❌ لا أرقام هواتف</li>
+                            <li>❌ لا مواقع جغرافية</li>
+                            <li>❌ لا معلومات جهاز أو متصفح</li>
+                            <li>❌ لا سجلات نشاط أو استخدام</li>
+                        </ul>
+                        
+                        <h3>2. التخزين المحلي</h3>
+                        <p>التطبيق يستخدم فقط تخزين المتصفح المحلي (LocalStorage) للوظائف التالية:</p>
+                        <ul>
+                            <li>💾 حفظ تفضيلات اللغة (عربي/إنجليزي)</li>
+                            <li>💾 حفظ تفضيلات الوضع (داكن/فاتح)</li>
+                            <li>💾 حفظ الشعبة المختارة</li>
+                            <li>💾 حفظ اليوم المعروض</li>
+                        </ul>
+                        
+                        <p><strong>معلومات هامة:</strong> هذه البيانات:</p>
+                        <ul>
+                            <li>تخزن فقط على جهازك الشخصي</li>
+                            <li>لا يتم إرسالها إلى أي خادم خارجي</li>
+                            <li>يمكنك حذفها في أي وقت من إعدادات المتصفح</li>
+                            <li>تختفي تلقائياً إذا قمت بمسح بيانات المتصفح</li>
+                        </ul>
+                        
+                        <h3>3. لا وجود لجهات خارجية</h3>
+                        <div class="important-note">
+                            <p><strong>✅ تأكيد هام:</strong> هذا التطبيق <strong>لا يستخدم أي من التالي</strong>:</p>
+                            <ul>
+                                <li>لا خدمات تحليلات (Google Analytics, etc.)</li>
+                                <li>لا إعلانات</li>
+                                <li>لا متتبعين (Trackers)</li>
+                                <li>لا كوكيز خارجية</li>
+                                <li>لا اتصال بخوادم خارجية</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>4. عدم مشاركة البيانات</h3>
+                        <p>نؤكد رسمياً أننا:</p>
+                        <ul>
+                            <li>🔐 لا نشارك أي بيانات مع طرف ثالث</li>
+                            <li>🔐 لا نبيع البيانات لأي جهة</li>
+                            <li>🔐 لا نستخدم البيانات لأغراض تسويقية</li>
+                            <li>🔐 لا نرسل أي بيانات خارج المتصفح</li>
+                        </ul>
+                        
+                        <h3>5. حماية الأطفال</h3>
+                        <p>هذا التطبيق آمن تماماً للأطفال والطلاب لأنه:</p>
+                        <ul>
+                            <li>لا يتطلب تسجيل دخول</li>
+                            <li>لا يجمع معلومات شخصية</li>
+                            <li>لا يحتوي على إعلانات</li>
+                            <li>محتواه تعليمي بحت</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="conduct" class="policy-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2 class="section-title">قواعد السلوك</h2>
+                        <span class="last-updated">آخر تحديث: ديسمبر 2026</span>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <h3>1. السلوك الأخلاقي</h3>
+                        <p>نلتزم بأعلى معايير السلوك الأخلاقي في تطوير واستخدام هذا التطبيق:</p>
+                        
+                        <h4>1.1 احترام الخصوصية</h4>
+                        <ul>
+                            <li>حماية خصوصية المستخدمين أولوية قصوى</li>
+                            <li>عدم جمع أي بيانات غير ضرورية</li>
+                            <li>الشفافية التامة حول كيفية عمل التطبيق</li>
+                        </ul>
+                        
+                        <h4>1.2 النزاهة الأكاديمية</h4>
+                        <ul>
+                            <li>الدقة في عرض المعلومات الأكاديمية</li>
+                            <li>توثيق مصادر البيانات بوضوح</li>
+                            <li>التحديث المستمر للمعلومات</li>
+                        </ul>
+                        
+                        <h3>2. السلوك المجتمعي</h3>
+                        <p>ندعو المستخدمين للالتزام بالقيم التالية:</p>
+                        <ul>
+                            <li>الاحترام المتبادل بين المستخدمين</li>
+                            <li>المساعدة في تحسين التطبيق بالإبلاغ عن الأخطاء</li>
+                            <li>المشاركة البناءة في تطوير التطبيق</li>
+                            <li>احترام حقوق الملكية الفكرية</li>
+                        </ul>
+                        
+                        <h3>3. السلوك التقني</h3>
+                        <ul>
+                            <li>عدم محاولة اختراق التطبيق</li>
+                            <li>عدم استخدام التطبيق لأغراض ضارة</li>
+                            <li>الاحتفاظ بنسخ احتياطية من البيانات المهمة</li>
+                            <li>التحقق من مصدر التطبيق قبل التثبيت</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="contribution" class="policy-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h2 class="section-title">سياسة المساهمة</h2>
+                        <span class="last-updated">آخر تحديث: ديسمبر 2026</span>
+                    </div>
+                    
+                    <div class="policy-content">
+                        <div class="highlight-box">
+                            <p><strong>🤝 الترحيب بالمساهمات:</strong> نرحب بجميع المساهمات البناءة لتحسين هذا التطبيق.</p>
+                        </div>
+                        
+                        <h3>1. أنواع المساهمات المقبولة</h3>
+                        <ul>
+                            <li>📝 تصحيح الأخطاء الإملائية واللغوية</li>
+                            <li>🔧 إصلاح الأخطاء البرمجية</li>
+                            <li>🎨 تحسين واجهة المستخدم</li>
+                            <li>📱 تحسين تجربة المستخدم على الأجهزة المختلفة</li>
+                            <li>🌐 إضافة ترجمات للغات جديدة</li>
+                            <li>📄 تحسين التوثيق</li>
+                        </ul>
+                        
+                        <h3>2. كيفية المساهمة</h3>
+                        <h4>2.1 للمطورين</h4>
+                        <ol>
+                            <li>انشاء Fork للمشروع على GitHub</li>
+                            <li>إنشاء فرع جديد للتعديل</li>
+                            <li>إجراء التعديلات المطلوبة</li>
+                            <li>اختبار التعديلات جيداً</li>
+                            <li>إنشاء Pull Request مع وصف واضح للتعديلات</li>
+                        </ol>
+                        
+                        <h4>2.2 للمستخدمين العاديين</h4>
+                        <ul>
+                            <li>الإبلاغ عن الأخطاء عبر صفحة المشروع</li>
+                            <li>اقتراح تحسينات جديدة</li>
+                            <li>مشاركة التطبيق مع الآخرين</li>
+                            <li>تقديم ملاحظات حول تجربة الاستخدام</li>
+                        </ul>
+                        
+                        <h3>3. معايير قبول المساهمات</h3>
+                        <ul>
+                            <li>الالتزام بأسلوب البرمجة الحالي</li>
+                            <li>تضمين توثيق للتغييرات</li>
+                            <li>اختبار التغييرات على متصفحات وأجهزة مختلفة</li>
+                            <li>الحفاظ على الخصوصية والأمان</li>
+                            <li>عدم إضافة أي خدمات تتبع أو إعلانات</li>
+                        </ul>
+                        
+                        <h3>4. الاعتراف بالمساهمين</h3>
+                        <p>سيتم ذكر جميع المساهمين بشكل لائق في:</p>
+                        <ul>
+                            <li>صفحة README للمشروع</li>
+                            <li>صفحة الشكر في التطبيق</li>
+                            <li>سجل التغييرات (Changelog)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="developer-section">
+                    <div class="developer-info">
+                        <h3><i class="fas fa-laptop-code"></i> معلومات المطور</h3>
+                        <p>تم تطوير هذا التطبيق بواسطة <strong>محمد الباقر</strong> بهدف خدمة المجتمع التعليمي.</p>
+                        
+                        <div class="developer-social">
+                            <a href="https://wsl-iq.github.io/" target="_blank" class="social-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                الموقع الرسمي
+                            </a>
+                            <a href="https://github.com/wsl-iq" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="https://www.instagram.com/wsl.iq/" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                Instagram
+                            </a>
+                            <a href="https://t.me/wsl_iq" target="_blank" class="social-link">
+                                <i class="fab fa-telegram"></i>
+                                Telegram
+                            </a>
+                            <a href="https://www.tiktok.com/@wsl.iq" class="social-link" target="_blank" title="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                                TikTok
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>© 2025-2026 جدول المحاضرات الأسبوعي. جميع الحقوق محفوظة للمطور.</p>
+            <p>هذا التطبيق مفتوح المصدر ومجاني للاستخدام التعليمي.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.policy-section');
+            
+            function activateLinkOnScroll() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            function revealOnScroll() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight - 100) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', function() {
+                activateLinkOnScroll();
+                revealOnScroll();
+            });
+            
+            revealOnScroll();
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

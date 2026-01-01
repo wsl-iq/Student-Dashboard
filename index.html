@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الطالب الذكية - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- الشريط العلوي -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>لوحة الطالب الذكية</h1>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">م</div>
+                <div>
+                    <h3>الطالب : محمد الباقر</h3>
+                    <p>القسم : تربية لغة أنجليزية</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- التنقل -->
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>الصفحة الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tasks.html" class="nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>إدارة الواجبات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="grades.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>دفتر الدرجات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notes.html" class="nav-link">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>ملاحظات سريعة</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="policies.html" class="nav-link">
+                        <i class="fas fa-file-contract"></i>
+                        <span>سياسات الاستخدام</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main>
+            <div class="welcome-section">
+                <div class="welcome-content">
+                    <h2><i class="fas fa-graduation-cap"></i> مرحباً بك في لوحة الطالب الذكية</h2>
+                    <p class="subtitle">أداة متكاملة لإدارة دراستك وتنظيم وقتك وتحقيق النجاح الأكاديمي</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h3>إدارة الواجبات</h3>
+                            <p>نظم واجباتك الدراسية، تتبع مواعيد التسليم، واحصل على تنبيهات قبل انتهاء الوقت.</p>
+                            <a href="tasks.html" class="feature-link">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>دفتر الدرجات</h3>
+                            <p>احسب معدلك الدراسي، تتبع تقدمك، واحصل على تحليلات مفصلة عن أدائك.</p>
+                            <a href="grades.html" class="feature-link">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-sticky-note"></i>
+                            </div>
+                            <h3>ملاحظات سريعة</h3>
+                            <p>دوّن ملاحظاتك المهمة، نظم أفكارك، واحفظ المعلومات بسهولة وسرعة.</p>
+                            <a href="notes.html" class="feature-link">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-section">
+                        <h3><i class="fas fa-chart-bar"></i> إحصائيات سريعة</h3>
+                        <div class="stats-grid" id="quick-stats">
+                            <!-- سيتم ملؤها بواسطة JavaScript -->
+
+                        </div>
+                    </div>
+                    
+                    <div class="tips-section">
+                        <h3><i class="fas fa-lightbulb"></i> نصائح للدراسة الفعالة</h3>
+                        <div class="tips-slider">
+                            <div class="tip-card">
+                                <i class="fas fa-clock"></i>
+                                <p>خطط لجدول دراسة منتظم وخصص وقتاً محدداً لكل مادة.</p>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-brain"></i>
+                                <p>خذ فترات راحة قصيرة بين جلسات الدراسة لتحسين التركيز.</p>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-book"></i>
+                                <p>راجع الدروس أولاً بأول ولا تترك التراكم حتى وقت الامتحان.</p>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-check-circle"></i>
+                                <p>ضع أهدافاً واقعية وقابلة للقياس لكل جلسة دراسة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- الفوتر -->
+        <footer>
+            <div class="footer-content">
+                <div class="developer-info">
+                    <h3>تطوير بواسطة : محمد الباقر</h3>
+                    <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
+                    
+                    <div class="social-links">
+                        <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://instagram.com/g6xs0r" class="social-link" target="_blank" title="إنستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/wsl-iq" class="social-link" target="_blank" title="تليغرام">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@wsl.iq" class="social-link" target="_blank" title="تيك توك">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2026 جميع الحقوق محفوظة - لوحة الطالب الذكية.
+                </div>
+
+                <div role="alert" aria-live="polite" style="margin-top:14px;border-radius:12px;padding:14px 16px;background:linear-gradient(90deg,#fff3cd,#ffe8a1);color:#5a3e00;border:1px solid rgba(90,62,0,0.12);box-shadow:0 8px 24px rgba(90,62,0,0.08);font-weight:700;text-align:right;display:flex;align-items:center;gap:12px;">
+                    <span style="font-size:1.2rem;line-height:1;">⚠️</span>
+                    <small style="font-size:0.95rem;line-height:1.4;display:block;">
+                    ملاحظة : هذا العمل مُنجز من قِبل مطوّر مستقل وبمبادرة شخصية هدفها تنظيم المحتوى وتقديمه بصورة أوضح وأكثر احتراف المشروع غير تابع لأي جهة رسمية وتم العمل عليه بدافع الاهتمام والترتيب وتحسين تجربة المستخدم.
+                    </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

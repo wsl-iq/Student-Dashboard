@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الطالب الذكية - دفتر الدرجات</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- الشريط العلوي -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>لوحة الطالب الذكية</h1>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">م</div>
+                <div>
+                    <h3>الطالب : محمد الباقر</h3>
+                    <p>القسم : تربية لغة أنجليزية</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- التنقل -->
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>الصفحة الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tasks.html" class="nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>إدارة الواجبات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="grades.html" class="nav-link active">
+                        <i class="fas fa-chart-line"></i>
+                        <span>دفتر الدرجات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notes.html" class="nav-link">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>ملاحظات سريعة</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="policies.html" class="nav-link">
+                        <i class="fas fa-file-contract"></i>
+                        <span>سياسات الاستخدام</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main>
+            <div class="page-header">
+                <h2 class="page-title">
+                    <i class="fas fa-chart-line"></i>
+                    دفتر الدرجات الدراسية
+                </h2>
+                <button class="btn" id="add-subject">
+                    <i class="fas fa-plus"></i>
+                    إضافة مادة
+                </button>
+            </div>
+            
+            <!-- ملخص المعدل -->
+            <div class="grades-summary">
+                <div class="summary-card">
+                    <h3>المعدل العام</h3>
+                    <div class="grade-value grade-excellent" id="overall-grade">0.0</div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>المعدل</span>
+                            <span id="grade-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-poor" id="grade-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="grade-status" id="grade-status">
+                        <i class="fas fa-info-circle"></i>
+                        <span>أضف مواد لبدء الحساب</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>أفضل مادة</h3>
+                    <div class="grade-value grade-good" id="best-subject-grade">0.0</div>
+                    <p id="best-subject-name">لا توجد مواد</p>
+                    <div class="subject-level" id="best-subject-level">
+                        <span class="level-badge">-</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>عدد المواد</h3>
+                    <div class="grade-value" style="color: var(--primary);" id="subjects-count">0</div>
+                    <p>مادة مضافة</p>
+                    <div class="stats-mini">
+                        <div class="stat-item">
+                            <span class="stat-label">ممتاز:</span>
+                            <span class="stat-value" id="excellent-count">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">مقبول:</span>
+                            <span class="stat-value" id="average-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- تحذير المعدل المنخفض -->
+            <div class="warning-card hidden" id="low-grade-warning">
+                <div class="warning-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="warning-content">
+                    <h4>تحذير: المعدل منخفض</h4>
+                    <p>معدلك الحالي أقل من الحد المطلوب (70%). يجب تحسين أدائك في المواد التالية:</p>
+                    <ul id="low-grade-subjects"></ul>
+                </div>
+                <button class="btn btn-small" id="dismiss-warning">تجاهل</button>
+            </div>
+            
+            <!-- إعدادات المعدل -->
+            <div class="settings-card">
+                <h3><i class="fas fa-cog"></i> إعدادات المعدل</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="min-grade">الحد الأدنى للمعدل المطلوب</label>
+                        <div class="range-input">
+                            <input type="range" id="min-grade" min="50" max="90" value="70" step="5">
+                            <span class="range-value" id="min-grade-value">70%</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade-scale">نظام الدرجات</label>
+                        <div class="custom-select">
+                            <select id="grade-scale">
+                                <option value="100">مئة درجة (100)</option>
+                                <option value="4">نظام الربع نقطة (4.0)</option>
+                                <option value="5">نظام الخمس نقاط (5.0)</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- نموذج إضافة/تعديل مادة -->
+            <div class="grades-form hidden" id="subject-form">
+                <h3><i class="fas fa-book"></i> إضافة مادة جديدة</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subject-name">اسم المادة</label>
+                        <input type="text" id="subject-name" placeholder="أدخل اسم المادة">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject-code">كود المادة (اختياري)</label>
+                        <input type="text" id="subject-code" placeholder="أدخل كود المادة">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subject-credit">عدد الساعات (اختياري)</label>
+                        <input type="number" id="subject-credit" min="1" max="10" placeholder="1-10" value="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject-semester">الفصل الدراسي</label>
+                        <div class="custom-select">
+                            <select id="subject-semester">
+                                <option value="الأول">الفصل الأول</option>
+                                <option value="الثاني">الفصل الثاني</option>
+                                <option value="الصيفي">الفصل الصيفي</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <h3><i class="fas fa-chart-bar"></i> إدخال الدرجات</h3>
+                </div>
+                <div class="grade-inputs">
+                    <div class="grade-input">
+                        <label for="exam-grade">الامتحان النهائي (60%)</label>
+                        <div class="grade-input-with-btn">
+                            <input type="number" id="exam-grade" min="0" max="100" placeholder="0-100" value="0">
+                            <button class="btn-icon" id="calc-exam"><i class="fas fa-calculator"></i></button>
+                        </div>
+                        <div class="grade-slider">
+                            <input type="range" class="grade-range" id="exam-slider" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                    <div class="grade-input">
+                        <label for="quiz-grade">الكويزات (20%)</label>
+                        <div class="grade-input-with-btn">
+                            <input type="number" id="quiz-grade" min="0" max="100" placeholder="0-100" value="0">
+                            <button class="btn-icon" id="calc-quiz"><i class="fas fa-calculator"></i></button>
+                        </div>
+                        <div class="grade-slider">
+                            <input type="range" class="grade-range" id="quiz-slider" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                    <div class="grade-input">
+                        <label for="activity-grade">النشاط والواجبات (20%)</label>
+                        <div class="grade-input-with-btn">
+                            <input type="number" id="activity-grade" min="0" max="100" placeholder="0-100" value="0">
+                            <button class="btn-icon" id="calc-activity"><i class="fas fa-calculator"></i></button>
+                        </div>
+                        <div class="grade-slider">
+                            <input type="range" class="grade-range" id="activity-slider" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="grade-preview">
+                    <h4>المعدل المتوقع: <span id="expected-grade">0.0</span></h4>
+                    <div class="progress-bar small">
+                        <div class="progress-fill" id="expected-progress" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn-add" id="save-subject">
+                        <i class="fas fa-save"></i>
+                        حفظ المادة
+                    </button>
+                    <button class="btn btn-cancel" id="cancel-subject">
+                        <i class="fas fa-times"></i>
+                        إلغاء
+                    </button>
+                </div>
+            </div>
+            
+            <!-- قائمة المواد -->
+            <div class="subjects-container" id="subjects-list">
+                <!-- سيتم إضافة المواد هنا ديناميكيًا -->
+                <div class="empty-state" id="empty-subjects">
+                    <i class="fas fa-book-open"></i>
+                    <h3>لا توجد مواد مضافة</h3>
+                    <p>أضف مادتك الأولى باستخدام الزر "إضافة مادة"</p>
+                </div>
+            </div>
+            
+            <!-- تحليل الأداء -->
+            <div class="analysis-section">
+                <h3><i class="fas fa-chart-pie"></i> تحليل الأداء</h3>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h4>توزيع الدرجات</h4>
+                        <div class="chart-container">
+                            <canvas id="grades-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analysis-card">
+                        <h4>نقاط القوة والضعف</h4>
+                        <div class="strengths-weaknesses">
+                            <div class="sw-item">
+                                <h5><i class="fas fa-thumbs-up"></i> نقاط القوة</h5>
+                                <ul id="strengths-list">
+                                    <li>لا توجد بيانات كافية</li>
+                                </ul>
+                            </div>
+                            <div class="sw-item">
+                                <h5><i class="fas fa-thumbs-down"></i> نقاط الضعف</h5>
+                                <ul id="weaknesses-list">
+                                    <li>لا توجد بيانات كافية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- الفوتر -->
+        <footer>
+            <div class="footer-content">
+                <div class="developer-info">
+                    <h3>تطوير بواسطة : محمد الباقر</h3>
+                    <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
+                    
+                    <div class="social-links">
+                        <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://instagram.com/g6xs0r" class="social-link" target="_blank" title="إنستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/wsl-iq" class="social-link" target="_blank" title="تليغرام">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@wsl.iq" class="social-link" target="_blank" title="تيك توك">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2026 جميع الحقوق محفوظة - لوحة الطالب الذكية.
+                </div>
+
+                <div role="alert" aria-live="polite" style="margin-top:14px;border-radius:12px;padding:14px 16px;background:linear-gradient(90deg,#fff3cd,#ffe8a1);color:#5a3e00;border:1px solid rgba(90,62,0,0.12);box-shadow:0 8px 24px rgba(90,62,0,0.08);font-weight:700;text-align:right;display:flex;align-items:center;gap:12px;">
+                    <span style="font-size:1.2rem;line-height:1;">⚠️</span>
+                    <small style="font-size:0.95rem;line-height:1.4;display:block;">
+                    ملاحظة : هذا العمل مُنجز من قِبل مطوّر مستقل وبمبادرة شخصية هدفها تنظيم المحتوى وتقديمه بصورة أوضح وأكثر احتراف المشروع غير تابع لأي جهة رسمية وتم العمل عليه بدافع الاهتمام والترتيب وتحسين تجربة المستخدم.
+                    </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/grades.js"></script>
+</body>
+</html>

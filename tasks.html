@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الطالب الذكية - إدارة الواجبات</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- الشريط العلوي -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>لوحة الطالب الذكية</h1>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">م</div>
+                <div>
+                    <h3>الطالب : محمد الباقر</h3>
+                    <p>القسم : تربية لغة أنجليزية</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- التنقل -->
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>الصفحة الرئيسية</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tasks.html" class="nav-link active">
+                        <i class="fas fa-tasks"></i>
+                        <span>إدارة الواجبات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="grades.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>دفتر الدرجات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="notes.html" class="nav-link">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>ملاحظات سريعة</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="policies.html" class="nav-link">
+                        <i class="fas fa-file-contract"></i>
+                        <span>سياسات الاستخدام</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main>
+            <div class="page-header">
+                <h2 class="page-title">
+                    <i class="fas fa-tasks"></i>
+                    إدارة الواجبات الدراسية
+                </h2>
+                <button class="btn" id="show-task-form">
+                    <i class="fas fa-plus"></i>
+                    إضافة واجب جديد
+                </button>
+            </div>
+            
+            <!-- نموذج إضافة واجب -->
+            <div class="task-form" id="task-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-name">اسم الواجب</label>
+                        <input type="text" id="task-name" placeholder="أدخل اسم الواجب">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-type">نوع الواجب</label>
+                        <div class="custom-select">
+                            <select id="task-type">
+                                <option value="تقرير">تقرير</option>
+                                <option value="بحث">بحث</option>
+                                <option value="واجب قصير">واجب قصير</option>
+                                <option value="مشروع">مشروع</option>
+                                <option value="عرض تقديمي">عرض تقديمي</option>
+                                <option value="تمارين">تمارين</option>
+                                <option value="اختبار">اختبار</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-date">تاريخ التسليم</label>
+                        <div class="date-picker">
+                            <input type="date" id="task-date">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-time">وقت التسليم</label>
+                        <div class="time-picker">
+                            <input type="time" id="task-time">
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="task-desc">وصف الواجب (اختياري)</label>
+                        <textarea id="task-desc" placeholder="أدخل وصفًا مختصرًا للواجب" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-priority">الأولوية</label>
+                        <div class="priority-buttons">
+                            <button class="priority-btn" data-priority="low">منخفضة</button>
+                            <button class="priority-btn active" data-priority="medium">متوسطة</button>
+                            <button class="priority-btn" data-priority="high">عالية</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn-add" id="add-task">
+                        <i class="fas fa-plus-circle"></i>
+                        إضافة الواجب
+                    </button>
+                </div>
+            </div>
+            
+            <!-- فلترة الواجبات -->
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">جميع الواجبات</button>
+                    <button class="filter-btn" data-filter="on-time">باقي وقت</button>
+                    <button class="filter-btn" data-filter="near-deadline">قريب من التسليم</button>
+                    <button class="filter-btn" data-filter="overdue">منتهية</button>
+                    <button class="filter-btn" data-filter="high-priority">عالية الأولوية</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="search-tasks" placeholder="ابحث في الواجبات...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            
+            <!-- قائمة الواجبات -->
+            <div class="tasks-container" id="tasks-list">
+                <!-- سيتم إضافة الواجبات هنا ديناميكيًا -->
+                <div class="empty-state" id="empty-tasks">
+                    <i class="fas fa-tasks"></i>
+                    <h3>لا توجد واجبات مضافة</h3>
+                    <p>أضف واجبك الأول باستخدام الزر "إضافة واجب جديد"</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- التنبيهات -->
+        <div class="notification hidden" id="notification">
+            <div class="notification-icon">
+                <i class="fas fa-exclamation"></i>
+            </div>
+            <div class="notification-content">
+                <h4 id="notification-title">تنبيه</h4>
+                <p id="notification-message">يوجد واجب على وشك الانتهاء!</p>
+            </div>
+            <button class="close-notification" id="close-notification">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- الفوتر -->
+        <footer>
+            <div class="footer-content">
+                <div class="developer-info">
+                    <h3>تطوير بواسطة : محمد الباقر</h3>
+                    <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
+                    
+                    <div class="social-links">
+                        <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://instagram.com/g6xs0r" class="social-link" target="_blank" title="إنستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/wsl-iq" class="social-link" target="_blank" title="تليغرام">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@wsl.iq" class="social-link" target="_blank" title="تيك توك">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2026 جميع الحقوق محفوظة - لوحة الطالب الذكية.
+                </div>
+
+                <div role="alert" aria-live="polite" style="margin-top:14px;border-radius:12px;padding:14px 16px;background:linear-gradient(90deg,#fff3cd,#ffe8a1);color:#5a3e00;border:1px solid rgba(90,62,0,0.12);box-shadow:0 8px 24px rgba(90,62,0,0.08);font-weight:700;text-align:right;display:flex;align-items:center;gap:12px;">
+                    <span style="font-size:1.2rem;line-height:1;">⚠️</span>
+                    <small style="font-size:0.95rem;line-height:1.4;display:block;">
+                    ملاحظة : هذا العمل مُنجز من قِبل مطوّر مستقل وبمبادرة شخصية هدفها تنظيم المحتوى وتقديمه بصورة أوضح وأكثر احتراف المشروع غير تابع لأي جهة رسمية وتم العمل عليه بدافع الاهتمام والترتيب وتحسين تجربة المستخدم.
+                    </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/tasks.js"></script>
+</body>
+</html>
