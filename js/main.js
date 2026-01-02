@@ -1,16 +1,9 @@
-// تهيئة التطبيق - الصفحة الرئيسية
 document.addEventListener('DOMContentLoaded', function() {
-    // تحديث الإحصائيات السريعة
-    updateQuickStats();
-    
-    // تحميل النصائح العشوائية
+    updateQuickStats();    
     loadRandomTips();
-    
-    // إعداد مستمعي الأحداث
     setupEventListeners();
 });
 
-// تحديث الإحصائيات السريعة
 function updateQuickStats() {
     const tasks = JSON.parse(localStorage.getItem('studentTasks')) || [];
     const subjects = JSON.parse(localStorage.getItem('studentSubjects')) || [];
@@ -23,7 +16,6 @@ function updateQuickStats() {
     
     const totalSubjects = subjects.length;
     
-    // حساب المعدل العام
     let overallGrade = 0;
     if (subjects.length > 0) {
         let totalGrade = 0;
@@ -64,7 +56,6 @@ function updateQuickStats() {
     }
 }
 
-// تحميل النصائح العشوائية
 function loadRandomTips() {
     const tips = [
         {
@@ -101,7 +92,6 @@ function loadRandomTips() {
         }
     ];
     
-    // اختيار 4 نصائح عشوائية
     const selectedTips = [];
     const usedIndices = new Set();
     
@@ -129,9 +119,7 @@ function loadRandomTips() {
     }
 }
 
-// إعداد مستمعي الأحداث
 function setupEventListeners() {
-    // إضافة تأثيرات للبطاقات
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -143,9 +131,6 @@ function setupEventListeners() {
         });
     });
     
-    // تحديث الإحصائيات كل 30 ثانية
-    setInterval(updateQuickStats, 30000);
-    
-    // تحديث النصائح كل دقيقة
-    setInterval(loadRandomTips, 60000);
+    setInterval(updateQuickStats, 30000); // تحديث الإحصائيات كل 30 ثانية
+    setInterval(loadRandomTips, 60000); // تحديث النصائح كل 60 ثانية
 }

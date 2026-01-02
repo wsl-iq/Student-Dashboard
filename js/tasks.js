@@ -173,9 +173,13 @@ function deleteTask(index) {
     }
 }
 
-// حفظ الواجبات
 function saveTasks() {
     localStorage.setItem('studentTasks', JSON.stringify(tasks));
+    const blob = new Blob([JSON.stringify(tasks, null, 2)], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'SaveTasks.json';
+    link.click();
 }
 
 // تحديث فلاتر الواجبات

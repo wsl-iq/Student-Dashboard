@@ -2,9 +2,12 @@
 title Building Student Dashboard Project Structure
 color 0a
 
-echo ----------------------------------------------
-echo   Creating Student Dashboard Project...
-echo ----------------------------------------------
+if "%OS%"=="Windows_NT" cls
+if not "%OS%"=="Windows_NT" exit /B
+
+echo +----------------------------------------------+
+echo |     Creating Student Dashboard Project       |
+echo +----------------------------------------------+
 
 REM Create main project folder
 mkdir project
@@ -30,8 +33,8 @@ mkdir project\assets
 mkdir project\assets\icons
 mkdir project\assets\fonts
 
-echo ----------------------------------------------
-echo   Project structure created successfully!
-echo ----------------------------------------------
+echo +----------------------------------------------+
+echo |    Project structure created successfully    |
+echo +----------------------------------------------+
 
 pause
