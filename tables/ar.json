@@ -1,0 +1,74 @@
+{
+  "app": {
+    "title": "جدول المحاضرات الأسبوعي",
+    "subtitle": "السبت - الأحد - الإثنين | بداية من 8:30 صباحاً",
+    "developed_by": "تم التطوير بواسطة: محمد الباقر",
+    "footer_note": "جدول المحاضرات الأسبوعي - كلية التربية - قسم اللغة الإنجليزية"
+  },
+  "navigation": {
+    "week_days": "أيام الأسبوع",
+    "sections": "الشعب الدراسية",
+    "settings": "الإعدادات",
+    "home": "الرئيسية"
+  },
+  "days": {
+    "saturday": "السبت",
+    "sunday": "الأحد",
+    "monday": "الاثنين",
+    "tuesday": "الثلاثاء",
+    "wednesday": "الأربعاء",
+    "thursday": "الخميس",
+    "friday": "الجمعة"
+  },
+  "sections": {
+    "A": "الشعبة أ - قاعة ASD3",
+    "B": "الشعبة ب - قاعة ASD4",
+    "C": "الشعبة ج - قاعة 64",
+    "D": "الشعبة د - قاعة شهداء الكرادة"
+  },
+  "ui": {
+    "select_section": "اختر الشعبة",
+    "select_day": "اختر اليوم",
+    "lecture": "محاضرة",
+    "lectures": "محاضرات",
+    "teacher": "المدرس",
+    "subject": "المادة",
+    "time": "الوقت",
+    "department": "القسم",
+    "no_lectures": "لا توجد محاضرات",
+    "enjoy_rest": "استمتع بيوم راحة",
+    "loading": "جاري التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "reset": "إعادة تعيين"
+  },
+  "buttons": {
+    "language": "English",
+    "theme_light": "الوضع الفاتح",
+    "theme_dark": "الوضع الداكن",
+    "notifications_on": "التنبيهات مفعلة",
+    "notifications_off": "التنبيهات معطلة",
+    "save_progress": "حفظ التقدم",
+    "export_schedule": "تصدير الجدول"
+  },
+  "settings": {
+    "general": "عام",
+    "appearance": "المظهر",
+    "notifications": "التنبيهات",
+    "data": "البيانات",
+    "select_language": "اختر اللغة",
+    "select_theme": "اختر المظهر",
+    "notification_before": "تنبيه قبل المحاضرة بـ",
+    "minutes": "دقائق",
+    "auto_save": "حفظ تلقائي",
+    "clear_data": "مسح البيانات",
+    "export_data": "تصدير البيانات"
+  },
+  "messages": {
+    "saved": "تم الحفظ بنجاح!",
+    "loading_error": "حدث خطأ في التحميل",
+    "no_internet": "لا يوجد اتصال بالإنترنت",
+    "data_cleared": "تم مسح البيانات",
+    "export_success": "تم التصدير بنجاح"
+  }
+}

@@ -10,22 +10,13 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- الشريط العلوي -->
         <header>
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <h1>لوحة الطالب الذكية</h1>
             </div>
-            <div class="user-info">
-                <div class="user-avatar">م</div>
-                <div>
-                    <h3>الطالب : محمد الباقر</h3>
-                    <p>القسم : تربية لغة أنجليزية</p>
-                </div>
-            </div>
         </header>
 
-        <!-- التنقل -->
         <nav>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -53,15 +44,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="policies.html" class="nav-link">
-                        <i class="fas fa-file-contract"></i>
-                        <span>سياسات الاستخدام</span>
+                    <a href="schedule.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>جدول المحاضرات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tables/schedule.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>جدول المحاضرات</span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- المحتوى الرئيسي -->
         <main>
             <div class="notes-page">
                 <div class="notes-sidebar">
@@ -73,13 +69,11 @@
                         </button>
                     </div>
                     
-                    <!-- البحث في الملاحظات -->
                     <div class="search-box">
                         <input type="text" id="search-notes" placeholder="ابحث في الملاحظات...">
                         <i class="fas fa-search"></i>
                     </div>
                     
-                    <!-- فلاتر الملاحظات -->
                     <div class="notes-filters">
                         <button class="filter-btn active" data-filter="all">الكل</button>
                         <button class="filter-btn" data-filter="recent">الأحدث</button>
@@ -87,9 +81,7 @@
                         <button class="filter-btn" data-filter="lecture">محاضرات</button>
                     </div>
                     
-                    <!-- قائمة الملاحظات -->
                     <div class="notes-list-sidebar" id="notes-list-sidebar">
-                        <!-- سيتم إضافة الملاحظات هنا ديناميكيًا -->
                         <div class="empty-state-sidebar">
                             <i class="fas fa-sticky-note"></i>
                             <p>لا توجد ملاحظات</p>
@@ -223,7 +215,6 @@
                         </div>
                     </div>
                     
-                    <!-- عرض الملاحظة -->
                     <div class="note-viewer hidden" id="note-viewer">
                         <div class="note-viewer-header">
                             <h2 id="viewer-title">عنوان الملاحظة</h2>
@@ -250,7 +241,6 @@
                         </div>
                     </div>
                     
-                    <!-- حالة فارغة -->
                     <div class="notes-empty-state" id="notes-empty">
                         <div class="empty-content">
                             <i class="fas fa-sticky-note"></i>
@@ -266,13 +256,13 @@
             </div>
         </main>
 
-        <!-- الفوتر -->
         <footer>
             <div class="footer-content">
                 <div class="developer-info">
                     <h3>تطوير بواسطة : محمد الباقر</h3>
                     <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
-                    
+                    <p>طالب بجامعة الإمام جعفر الصادق<img src="assets/icons/عليه السلام.png" alt="عليه السلام" style="vertical-align: middle; width: 50px;"></p>
+                    <p>كلية التربية قسم اللغة الأنجليزية</p>
                     <div class="social-links">
                         <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
                             <i class="fas fa-globe"></i>
@@ -288,6 +278,9 @@
                         </a>
                         <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
                             <i class="fab fa-github"></i>
+                        </a>
+                        <a href="policies.html" class="social-link" target="_blank" title="سياسات الاستخدام">
+                            <i class="fas fa-file-contract"></i>
                         </a>
                     </div>
                 </div>

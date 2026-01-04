@@ -1,0 +1,794 @@
+{
+  "academic_info": {
+    "college": "كلية التربية",
+    "college_en": "College of Education",
+    "department": "قسم اللغة الإنجليزية",
+    "department_en": "English Department",
+    "year": "الأولى",
+    "year_en": "First Year",
+    "semester": "الفصل الدراسي الأول",
+    "semester_en": "First Semester",
+    "academic_year": "2024-2025"
+  },
+  "sections": {
+    "A": {
+      "name": "الشعبة أ",
+      "name_en": "Section A",
+      "room": "قاعة ASD3",
+      "room_en": "Hall ASD3",
+      "schedule": {
+        "saturday": [
+          {
+            "id": "SAT-A-1",
+            "time": "8:30 - 9:15",
+            "subject": "English Grammar",
+            "subject_ar": "قواعد اللغة الإنجليزية",
+            "teacher": "Ms. Abrar Sa'ad",
+            "teacher_ar": "م. أبرار سعد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-A-2",
+            "time": "10:30 - 11:15",
+            "subject": "Phonetics",
+            "subject_ar": "علم الأصوات",
+            "teacher": "Ms. Sayran Najim",
+            "teacher_ar": "م. سيران نجم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-A-3",
+            "time": "12:30 - 1:15",
+            "subject": "Arabic Language",
+            "subject_ar": "اللغة العربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "sunday": [
+          {
+            "id": "SUN-A-1",
+            "time": "8:30 - 9:15",
+            "subject": "Composing Writing",
+            "subject_ar": "كتابة التحرير",
+            "teacher": "Mr. Ali Abas",
+            "teacher_ar": "أ. علي عباس",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-A-2",
+            "time": "9:15 - 10:00",
+            "subject": "Human Rights",
+            "subject_ar": "حقوق الإنسان",
+            "teacher": "Dr. Nidhal Metti",
+            "teacher_ar": "د. نضال متي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-A-3",
+            "time": "10:30 - 11:15",
+            "subject": "Listening and Speaking/Lab",
+            "subject_ar": "الاستماع والتحدث/المختبر",
+            "teacher": "Ms. Sarah Ahmed",
+            "teacher_ar": "م. سارة أحمد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lab",
+            "type_ar": "مختبر"
+          },
+          {
+            "id": "SUN-A-4",
+            "time": "11:15 - 12:00",
+            "subject": "Educational Psychology",
+            "subject_ar": "علم النفس التربوي",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "monday": [
+          {
+            "id": "MON-A-1",
+            "time": "8:30 - 9:15",
+            "subject": "Reading 1",
+            "subject_ar": "القراءة 1",
+            "teacher": "Ms. Jeehan Abd Al-Kareem",
+            "teacher_ar": "م. جيهان عبد الكريم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-A-2",
+            "time": "9:15 - 10:00",
+            "subject": "An Introduction to English Literature",
+            "subject_ar": "مقدمة في الأدب الإنجليزي",
+            "teacher": "Mr. Mohammad Rahman",
+            "teacher_ar": "أ. محمد الرحمن",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-A-3",
+            "time": "12:30 - 1:15",
+            "subject": "Computer Science",
+            "subject_ar": "علوم الحاسوب",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-A-4",
+            "time": "1:15 - 2:00",
+            "subject": "Fundamental of Education",
+            "subject_ar": "أصول التربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ]
+      }
+    },
+    "B": {
+      "name": "الشعبة ب",
+      "name_en": "Section B",
+      "room": "قاعة ASD4",
+      "room_en": "Hall ASD4",
+      "schedule": {
+        "saturday": [
+          {
+            "id": "SAT-B-1",
+            "time": "8:30 - 9:15",
+            "subject": "Human Rights",
+            "subject_ar": "حقوق الإنسان",
+            "teacher": "Dr. Nidhal Metti",
+            "teacher_ar": "د. نضال متي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-B-2",
+            "time": "9:15 - 10:00",
+            "subject": "English Grammar",
+            "subject_ar": "قواعد اللغة الإنجليزية",
+            "teacher": "Ms. Abrar Sa'ad",
+            "teacher_ar": "م. أبرار سعد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-B-3",
+            "time": "10:30 - 11:15",
+            "subject": "Phonetics",
+            "subject_ar": "علم الأصوات",
+            "teacher": "Ms. Sayran Najim",
+            "teacher_ar": "م. سيران نجم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-B-4",
+            "time": "11:15 - 12:00",
+            "subject": "Arabic Language",
+            "subject_ar": "اللغة العربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "sunday": [
+          {
+            "id": "SUN-B-1",
+            "time": "8:30 - 9:15",
+            "subject": "Composing Writing",
+            "subject_ar": "كتابة التحرير",
+            "teacher": "Mr. Ali Abas",
+            "teacher_ar": "أ. علي عباس",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-B-2",
+            "time": "9:15 - 10:00",
+            "subject": "An Introduction to English Literature",
+            "subject_ar": "مقدمة في الأدب الإنجليزي",
+            "teacher": "Mr. Mohammad Rahman",
+            "teacher_ar": "أ. محمد الرحمن",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-B-3",
+            "time": "10:30 - 11:15",
+            "subject": "Fundamental of Education",
+            "subject_ar": "أصول التربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-B-4",
+            "time": "11:15 - 12:00",
+            "subject": "Listening and Speaking/Lab",
+            "subject_ar": "الاستماع والتحدث/المختبر",
+            "teacher": "Ms. Sarah Ahmed",
+            "teacher_ar": "م. سارة أحمد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lab",
+            "type_ar": "مختبر"
+          }
+        ],
+        "monday": [
+          {
+            "id": "MON-B-1",
+            "time": "8:30 - 9:15",
+            "subject": "Reading 1",
+            "subject_ar": "القراءة 1",
+            "teacher": "Ms. Jeehan Abd Al-Kareem",
+            "teacher_ar": "م. جيهان عبد الكريم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-B-2",
+            "time": "12:30 - 1:15",
+            "subject": "Computer Science",
+            "subject_ar": "علوم الحاسوب",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-B-3",
+            "time": "1:15 - 2:00",
+            "subject": "Educational Psychology",
+            "subject_ar": "علم النفس التربوي",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ]
+      }
+    },
+    "C": {
+      "name": "الشعبة ج",
+      "name_en": "Section C",
+      "room": "قاعة 64",
+      "room_en": "Hall 64",
+      "schedule": {
+        "saturday": [
+          {
+            "id": "SAT-C-1",
+            "time": "8:30 - 9:15",
+            "subject": "Phonetics",
+            "subject_ar": "علم الأصوات",
+            "teacher": "Ms. Sayran Najim",
+            "teacher_ar": "م. سيران نجم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-C-2",
+            "time": "9:15 - 10:00",
+            "subject": "Arabic Language",
+            "subject_ar": "اللغة العربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-C-3",
+            "time": "10:30 - 11:15",
+            "subject": "Fundamental of Education",
+            "subject_ar": "أصول التربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-C-4",
+            "time": "11:15 - 12:00",
+            "subject": "Reading 1",
+            "subject_ar": "القراءة 1",
+            "teacher": "Ms. Jeehan Abd Al-Kareem",
+            "teacher_ar": "م. جيهان عبد الكريم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "sunday": [
+          {
+            "id": "SUN-C-1",
+            "time": "8:30 - 9:15",
+            "subject": "Listening and Speaking/Lab",
+            "subject_ar": "الاستماع والتحدث/المختبر",
+            "teacher": "Ms. Sarah Ahmed",
+            "teacher_ar": "م. سارة أحمد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lab",
+            "type_ar": "مختبر"
+          },
+          {
+            "id": "SUN-C-2",
+            "time": "9:15 - 10:00",
+            "subject": "Educational Psychology",
+            "subject_ar": "علم النفس التربوي",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-C-3",
+            "time": "10:30 - 11:15",
+            "subject": "An Introduction to English Literature",
+            "subject_ar": "مقدمة في الأدب الإنجليزي",
+            "teacher": "Mr. Mohammad Rahman",
+            "teacher_ar": "أ. محمد الرحمن",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-C-4",
+            "time": "11:15 - 12:00",
+            "subject": "Composing Writing",
+            "subject_ar": "كتابة التحرير",
+            "teacher": "Mr. Ali Abas",
+            "teacher_ar": "أ. علي عباس",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "monday": [
+          {
+            "id": "MON-C-1",
+            "time": "8:30 - 9:15",
+            "subject": "English Grammar",
+            "subject_ar": "قواعد اللغة الإنجليزية",
+            "teacher": "Ms. Abrar Sa'ad",
+            "teacher_ar": "م. أبرار سعد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-C-2",
+            "time": "9:15 - 10:00",
+            "subject": "Human Rights",
+            "subject_ar": "حقوق الإنسان",
+            "teacher": "Dr. Nidhal Metti",
+            "teacher_ar": "د. نضال متي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-C-3",
+            "time": "12:30 - 1:15",
+            "subject": "Computer Science",
+            "subject_ar": "علوم الحاسوب",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-C-4",
+            "time": "1:15 - 2:00",
+            "subject": "Fundamental of Education",
+            "subject_ar": "أصول التربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ]
+      }
+    },
+    "D": {
+      "name": "الشعبة د",
+      "name_en": "Section D",
+      "room": "قاعة شهداء الكرادة",
+      "room_en": "Al-Karada Martyrs Hall",
+      "schedule": {
+        "saturday": [
+          {
+            "id": "SAT-D-1",
+            "time": "8:30 - 9:15",
+            "subject": "Composing Writing",
+            "subject_ar": "كتابة التحرير",
+            "teacher": "Mr. Ali Abas",
+            "teacher_ar": "أ. علي عباس",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-D-2",
+            "time": "9:15 - 10:00",
+            "subject": "Phonetics",
+            "subject_ar": "علم الأصوات",
+            "teacher": "Ms. Sayran Najim",
+            "teacher_ar": "م. سيران نجم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-D-3",
+            "time": "10:30 - 11:15",
+            "subject": "Fundamental of Education",
+            "subject_ar": "أصول التربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SAT-D-4",
+            "time": "11:15 - 12:00",
+            "subject": "Arabic Language",
+            "subject_ar": "اللغة العربية",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "sunday": [
+          {
+            "id": "SUN-D-1",
+            "time": "8:30 - 9:15",
+            "subject": "Reading 1",
+            "subject_ar": "القراءة 1",
+            "teacher": "Ms. Jeehan Abd Al-Kareem",
+            "teacher_ar": "م. جيهان عبد الكريم",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-D-2",
+            "time": "9:15 - 10:00",
+            "subject": "An Introduction to English Literature",
+            "subject_ar": "مقدمة في الأدب الإنجليزي",
+            "teacher": "Mr. Mohammad Rahman",
+            "teacher_ar": "أ. محمد الرحمن",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "SUN-D-3",
+            "time": "12:30 - 1:15",
+            "subject": "Human Rights",
+            "subject_ar": "حقوق الإنسان",
+            "teacher": "Dr. Nidhal Metti",
+            "teacher_ar": "د. نضال متي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ],
+        "monday": [
+          {
+            "id": "MON-D-1",
+            "time": "8:30 - 9:15",
+            "subject": "English Grammar",
+            "subject_ar": "قواعد اللغة الإنجليزية",
+            "teacher": "Ms. Abrar Sa'ad",
+            "teacher_ar": "م. أبرار سعد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-D-2",
+            "time": "10:30 - 11:15",
+            "subject": "Listening and Speaking/Lab",
+            "subject_ar": "الاستماع والتحدث/المختبر",
+            "teacher": "Ms. Sarah Ahmed",
+            "teacher_ar": "م. سارة أحمد",
+            "department": "English Department",
+            "department_ar": "قسم اللغة الإنجليزية",
+            "type": "lab",
+            "type_ar": "مختبر"
+          },
+          {
+            "id": "MON-D-3",
+            "time": "11:15 - 12:00",
+            "subject": "Educational Psychology",
+            "subject_ar": "علم النفس التربوي",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          },
+          {
+            "id": "MON-D-4",
+            "time": "12:30 - 1:15",
+            "subject": "Computer Science",
+            "subject_ar": "علوم الحاسوب",
+            "teacher": "Non Departmental",
+            "teacher_ar": "غير تخصصي",
+            "department": "General",
+            "department_ar": "عام",
+            "type": "lecture",
+            "type_ar": "محاضرة"
+          }
+        ]
+      }
+    }
+  },
+  "subjects": {
+    "English Grammar": {
+      "name_ar": "قواعد اللغة الإنجليزية",
+      "code": "ENG101",
+      "credits": 3,
+      "type": "core",
+      "type_ar": "متطلب أساسي"
+    },
+    "Phonetics": {
+      "name_ar": "علم الأصوات",
+      "code": "ENG102",
+      "credits": 3,
+      "type": "core",
+      "type_ar": "متطلب أساسي"
+    },
+    "Arabic Language": {
+      "name_ar": "اللغة العربية",
+      "code": "ARB101",
+      "credits": 2,
+      "type": "university_requirement",
+      "type_ar": "متطلب جامعة"
+    },
+    "Composing Writing": {
+      "name_ar": "كتابة التحرير",
+      "code": "ENG103",
+      "credits": 3,
+      "type": "core",
+      "type_ar": "متطلب أساسي"
+    },
+    "Human Rights": {
+      "name_ar": "حقوق الإنسان",
+      "code": "GEN101",
+      "credits": 2,
+      "type": "university_requirement",
+      "type_ar": "متطلب جامعة"
+    },
+    "Listening and Speaking/Lab": {
+      "name_ar": "الاستماع والتحدث/المختبر",
+      "code": "ENG104",
+      "credits": 3,
+      "type": "lab",
+      "type_ar": "مختبر"
+    },
+    "Educational Psychology": {
+      "name_ar": "علم النفس التربوي",
+      "code": "EDU101",
+      "credits": 2,
+      "type": "department_requirement",
+      "type_ar": "متطلب قسم"
+    },
+    "An Introduction to English Literature": {
+      "name_ar": "مقدمة في الأدب الإنجليزي",
+      "code": "ENG105",
+      "credits": 3,
+      "type": "core",
+      "type_ar": "متطلب أساسي"
+    },
+    "Reading 1": {
+      "name_ar": "القراءة 1",
+      "code": "ENG106",
+      "credits": 3,
+      "type": "core",
+      "type_ar": "متطلب أساسي"
+    },
+    "Computer Science": {
+      "name_ar": "علوم الحاسوب",
+      "code": "CSC101",
+      "credits": 2,
+      "type": "university_requirement",
+      "type_ar": "متطلب جامعة"
+    },
+    "Fundamental of Education": {
+      "name_ar": "أصول التربية",
+      "code": "EDU102",
+      "credits": 2,
+      "type": "department_requirement",
+      "type_ar": "متطلب قسم"
+    }
+  },
+  "teachers": {
+    "Ms. Abrar Sa'ad": {
+      "name_ar": "م. أبرار سعد",
+      "subjects": ["English Grammar"],
+      "subjects_ar": ["قواعد اللغة الإنجليزية"],
+      "department": "English Department",
+      "department_ar": "قسم اللغة الإنجليزية",
+      "title": "Ms.",
+      "title_ar": "مدرسة"
+    },
+    "Ms. Sayran Najim": {
+      "name_ar": "م. سيران نجم",
+      "subjects": ["Phonetics"],
+      "subjects_ar": ["علم الأصوات"],
+      "department": "English Department",
+      "department_ar": "قسم اللغة الإنجليزية",
+      "title": "Ms.",
+      "title_ar": "مدرسة"
+    },
+    "Non Departmental": {
+      "name_ar": "غير تخصصي",
+      "subjects": [
+        "Arabic Language", 
+        "Human Rights", 
+        "Computer Science", 
+        "Educational Psychology", 
+        "Fundamental of Education"
+      ],
+      "subjects_ar": [
+        "اللغة العربية",
+        "حقوق الإنسان",
+        "علوم الحاسوب",
+        "علم النفس التربوي",
+        "أصول التربية"
+      ],
+      "department": "General",
+      "department_ar": "عام",
+      "title": "",
+      "title_ar": ""
+    },
+    "Mr. Ali Abas": {
+      "name_ar": "أ. علي عباس",
+      "subjects": ["Composing Writing"],
+      "subjects_ar": ["كتابة التحرير"],
+      "department": "English Department",
+      "department_ar": "قسم اللغة الإنجليزية",
+      "title": "Mr.",
+      "title_ar": "أستاذ"
+    },
+    "Dr. Nidhal Metti": {
+      "name_ar": "د. نضال متي",
+      "subjects": ["Human Rights"],
+      "subjects_ar": ["حقوق الإنسان"],
+      "department": "General",
+      "department_ar": "عام",
+      "title": "Dr.",
+      "title_ar": "دكتور"
+    },
+    "Ms. Sarah Ahmed": {
+      "name_ar": "م. سارة أحمد",
+      "subjects": ["Listening and Speaking/Lab"],
+      "subjects_ar": ["الاستماع والتحدث/المختبر"],
+      "department": "English Department",
+      "department_ar": "قسم اللغة الإنجليزية",
+      "title": "Ms.",
+      "title_ar": "مدرسة"
+    },
+    "Mr. Mohammad Rahman": {
+      "name_ar": "أ. محمد الرحمن",
+      "subjects": ["An Introduction to English Literature"],
+      "subjects_ar": ["مقدمة في الأدب الإنجليزي"],
+      "department": "English Department",
+      "department_ar": "قسم اللغة الإنجليزية",
+      "title": "Mr.",
+      "title_ar": "أستاذ"
+    },
+    "Ms. Jeehan Abd Al-Kareem": {
+      "name_ar": "م. جيهان عبد الكريم",
+      "subjects": ["Reading 1"],
+      "subjects_ar": ["القراءة 1"],
+      "department": "English Department",
+      "department_ar": "قسم اللغة الإنجليزية",
+      "title": "Ms.",
+      "title_ar": "مدرسة"
+    }
+  },
+  "metadata": {
+    "academic_year": "2024-2025",
+    "semester_start": "2024-09-15",
+    "semester_end": "2025-01-30",
+    "first_class": "8:30 AM",
+    "last_class": "2:00 PM",
+    "class_duration": 45,
+    "days": ["saturday", "sunday", "monday"],
+    "days_ar": ["السبت", "الأحد", "الإثنين"],
+    "days_en": ["Saturday", "Sunday", "Monday"],
+    "created": "2024-12-22",
+    "version": "2.0.0",
+    "total_teachers": 8,
+    "total_subjects": 11,
+    "weekly_lectures": 44,
+    "data_source": "Excel file: first-third (3).xlsx",
+    "notes": "تم تصحيح الأخطاء الإملائية والتأكد من دقة البيانات من ملف Excel"
+  }
+}

@@ -10,22 +10,13 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- الشريط العلوي -->
         <header>
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <h1>لوحة الطالب الذكية</h1>
             </div>
-            <div class="user-info">
-                <div class="user-avatar">م</div>
-                <div>
-                    <h3>الطالب : محمد الباقر</h3>
-                    <p>القسم : تربية لغة أنجليزية</p>
-                </div>
-            </div>
         </header>
 
-        <!-- التنقل -->
         <nav>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -53,15 +44,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="policies.html" class="nav-link">
-                        <i class="fas fa-file-contract"></i>
-                        <span>سياسات الاستخدام</span>
+                    <a href="tables/schedule.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>جدول المحاضرات</span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- المحتوى الرئيسي -->
         <main>
             <div class="welcome-section">
                 <div class="welcome-content">
@@ -95,12 +85,21 @@
                             <p>دوّن ملاحظاتك المهمة، نظم أفكارك، واحفظ المعلومات بسهولة وسرعة.</p>
                             <a href="notes.html" class="feature-link">ابدأ الآن <i class="fas fa-arrow-left"></i></a>
                         </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                                <span class="update-indicator" id="update-indicator"></span>
+                            </div>
+                            <h3>التحقق من التحديثات</h3>
+                            <p>تأكد من أنك تستخدم أحدث إصدار من التطبيق، واحصل على أفضل تجربة دراسية.</p>
+                            <a href="update.html" class="feature-link" id="check-updates-link">تحقق الآن <i class="fas fa-arrow-left"></i></a>
+                        </div>
                     </div>
                     
                     <div class="stats-section">
                         <h3><i class="fas fa-chart-bar"></i> إحصائيات سريعة</h3>
                         <div class="stats-grid" id="quick-stats">
-                            <!-- سيتم ملؤها بواسطة JavaScript -->
 
                         </div>
                     </div>
@@ -130,13 +129,14 @@
             </div>
         </main>
 
-        <!-- الفوتر -->
         <footer>
             <div class="footer-content">
                 <div class="developer-info">
                     <h3>تطوير بواسطة : محمد الباقر</h3>
                     <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
-                    
+                    <p>طالب بجامعة الإمام جعفر الصادق<img src="assets/icons/عليه السلام.png" alt="عليه السلام" style="vertical-align: middle; width: 50px;"></p>
+                    <p>كلية التربية قسم اللغة الأنجليزية</p>
+
                     <div class="social-links">
                         <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
                             <i class="fas fa-globe"></i>
@@ -152,6 +152,9 @@
                         </a>
                         <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
                             <i class="fab fa-github"></i>
+                        </a>
+                        <a href="policies.html" class="social-link" target="_blank" title="سياسات الاستخدام">
+                            <i class="fas fa-file-contract"></i>
                         </a>
                     </div>
                 </div>
@@ -169,7 +172,6 @@
             </div>
         </footer>
     </div>
-
     <script src="js/main.js"></script>
 </body>
 </html>

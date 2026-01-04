@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="app-version" content="1.0.0" />
+    <title>تحديث لوحة الطالب الذكي</title>    
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        :root{
+            --bg:#f3f6fb;
+            --card:#ffffff;
+            --accent:#0d6efd;
+            --success:#28a745;
+            --muted:#6c757d;
+            --shadow: 0 6px 18px rgba(18,38,63,0.08);
+        }
+        html,body{height:100%;margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:#123;}
+        .wrap{
+            min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+        }
+        .card{
+            width:100%;max-width:720px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;
+            display:grid;grid-template-columns:360px 1fr;
+            direction:rtl;
+        }
+        @media (max-width:720px){ .card{grid-template-columns:1fr; padding-bottom:18px} .left{padding:28px 20px} }
+
+        .left{
+            background:linear-gradient(180deg, rgba(13,110,253,0.08), rgba(13,110,253,0.02));
+            padding:40px;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:center;text-align:center;
+        }
+        .brand{
+            width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6610f2);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;
+            box-shadow:0 6px 18px rgba(13,110,253,0.12);
+        }
+        h1{margin:0;font-size:20px;color:#07203a}
+        p.lead{margin:0;color:var(--muted);line-height:1.5}
+
+        .right{padding:28px 32px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+        .versions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+        .chip{background:#f8f9fa;border-radius:999px;padding:8px 14px;font-weight:600;color:#0b2a44;border:1px solid rgba(11,42,68,0.06)}
+        .status{margin-top:6px;color:var(--muted);font-size:14px}
+        #update-btn{
+            margin-top:6px;background:var(--accent);color:white;border:none;padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer;
+            box-shadow:0 6px 14px rgba(13,110,253,0.12);transition:transform .12s ease,opacity .12s ease;
+        }
+        #update-btn.secondary{background:linear-gradient(90deg,#0d6efd,#6610f2)}
+        #update-btn:active{transform:translateY(1px)}
+        #update-btn[disabled]{opacity:.6;cursor:not-allowed;box-shadow:none}
+        .note{font-size:13px;color:var(--muted)}
+        .new-badge{background:linear-gradient(90deg,#28a745,#20c997);color:white;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+
+        .home-btn{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+            background: linear-gradient(90deg,var(--accent),#6610f2);
+            color:#fff;
+            text-decoration:none;
+            font-weight:700;
+            padding:10px 16px;
+            border-radius:12px;
+            border: none;
+            box-shadow:0 6px 14px rgba(13,110,253,0.12);
+            transition: transform .12s ease, opacity .12s ease;
+            min-width:140px;
+            z-index:2;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+
+        .home-btn:hover{
+            transform:translateY(-2px);
+            opacity:.98;
+            color:#eeff00;
+            transform:translateY(-2px);
+        }
+
+        .card{position:relative;overflow:hidden;} 
+
+        @media (max-width:720px){
+            .home-btn{
+                position:static;
+                margin:0 auto;
+                display:block;
+                width:fit-content;
+                padding:10px 14px;
+            }
+        }
+
+        @media (max-width:360px){
+            .home-btn{
+                min-width:0;
+                padding:8px 10px;
+                font-size:13px;
+            }
+        }
+   
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card" role="main" aria-live="polite">
+            <div class="left">
+                <div class="brand">SD</div>
+                <h1>يتوفر تحديث جديد</h1>
+                <p class="lead">نسخة لوحة الطالب الذكي بحاجة للتحديث. حافظ على بياناتك واستمتع بالميزات والتحسينات الجديدة.</p>
+            </div>
+
+            <a href="index.html" class="home-btn">العودة إلى الصفحة الرئيسية</a>
+
+            <div class="right">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                    <div style="display:flex;flex-direction:column">
+                        <div style="display:flex;gap:8px;align-items:center;">
+                            <span class="chip">الإصدار الحالي: <strong style="margin-inline-start:8px" id="current-version">—</strong></span>
+                            <span class="chip">الإصدار على الخادم: <strong style="margin-inline-start:8px" id="server-version">—</strong></span>
+                        </div>
+                        <div class="status" id="status-text">جارٍ التحقق...</div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+                        <button id="update-btn" class="secondary" aria-live="polite" disabled>التحقق...</button>
+                        <div class="note">إذا لم يحدث التحديث تلقائياً، اضغط على زر التحديث لإعادة تحميل الصفحة بدون استخدام الذاكرة المؤقتة.</div>
+                    </div>
+                </div>
+
+                <div style="margin-top:8px">
+                    <small class="note"></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const meta = document.querySelector('meta[name="app-version"]');
+            const CURRENT = (meta && meta.content) ? meta.content.trim() : '1.0.0';
+            const FALLBACK_SERVER = '1.0.0';
+            const SERVER_VERSION_URL = 'https://raw.githubusercontent.com/wsl-iq/Student-Dashboard/refs/heads/main/version.txt';
+            const currentEl = document.getElementById('current-version');
+            const serverEl  = document.getElementById('server-version');
+            const statusEl  = document.getElementById('status-text');
+            const btn       = document.getElementById('update-btn');
+
+            currentEl.textContent = CURRENT;
+
+            async function fetchServerVersion(){
+                try{
+                    const res = await fetch(SERVER_VERSION_URL, {cache: 'no-store'});
+                    if(!res.ok) throw new Error('not-found');
+                    const txt = (await res.text()).trim();
+                    return txt || FALLBACK_SERVER;
+                }catch(e){
+                    return FALLBACK_SERVER;
+                }
+            }
+
+            function cmpSemver(a,b){
+                const pa = a.split('.').map(Number);
+                const pb = b.split('.').map(Number);
+                for(let i=0;i<Math.max(pa.length,pb.length);i++){
+                    const na = pa[i]||0, nb = pb[i]||0;
+                    if(na>nb) return 1;
+                    if(na<nb) return -1;
+                }
+                return 0;
+            }
+
+            function enableButtonAsUpdate(){
+                btn.textContent = 'الانتقال للصفحة المحدثة';
+                btn.disabled = false;
+                btn.onclick = () => {
+                    location.href = 'https://wsl-iq.github.io/Student-Dashboard/';
+                };
+            }
+
+            function disableButtonNoUpdate(){
+                btn.textContent = 'أنت على أحدث إصدار';
+                btn.disabled = true;
+                btn.onclick = null;
+            }
+
+            (async ()=>{
+                const serverVer = await fetchServerVersion();
+                serverEl.textContent = serverVer;
+                const comp = cmpSemver(serverVer, CURRENT);
+                if(comp > 0){
+                    statusEl.innerHTML = '<span class="new-badge">جديد</span> إصدار أحدث متوفر. يُنصح بالتحديث.';
+                    enableButtonAsUpdate();
+                } else if(comp === 0){
+                    statusEl.textContent = 'الإصدار مطابق لآخر إصدار متوفر.';
+                    disableButtonNoUpdate();
+                } else {
+                    statusEl.textContent = 'الإصدار الحالي أحدث من الموجود على الخادم.';
+                    disableButtonNoUpdate();
+                }
+            })();
+        })();
+    </script>
+</body>
+</html>

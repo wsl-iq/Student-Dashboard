@@ -10,22 +10,13 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- الشريط العلوي -->
         <header>
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <h1>لوحة الطالب الذكية</h1>
             </div>
-            <div class="user-info">
-                <div class="user-avatar">م</div>
-                <div>
-                    <h3>الطالب : محمد الباقر</h3>
-                    <p>القسم : تربية لغة أنجليزية</p>
-                </div>
-            </div>
         </header>
 
-        <!-- التنقل -->
         <nav>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -53,15 +44,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="policies.html" class="nav-link">
-                        <i class="fas fa-file-contract"></i>
-                        <span>سياسات الاستخدام</span>
+                    <a href="schedule.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>جدول المحاضرات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tables/schedule.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>جدول المحاضرات</span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- المحتوى الرئيسي -->
         <main>
             <div class="page-header">
                 <h2 class="page-title">
@@ -74,7 +70,6 @@
                 </button>
             </div>
             
-            <!-- ملخص المعدل -->
             <div class="grades-summary">
                 <div class="summary-card">
                     <h3>المعدل العام</h3>
@@ -118,7 +113,6 @@
                 </div>
             </div>
             
-            <!-- تحذير المعدل المنخفض -->
             <div class="warning-card hidden" id="low-grade-warning">
                 <div class="warning-icon">
                     <i class="fas fa-exclamation-triangle"></i>
@@ -131,7 +125,6 @@
                 <button class="btn btn-small" id="dismiss-warning">تجاهل</button>
             </div>
             
-            <!-- إعدادات المعدل -->
             <div class="settings-card">
                 <h3><i class="fas fa-cog"></i> إعدادات المعدل</h3>
                 <div class="form-row">
@@ -156,7 +149,6 @@
                 </div>
             </div>
             
-            <!-- نموذج إضافة/تعديل مادة -->
             <div class="grades-form hidden" id="subject-form">
                 <h3><i class="fas fa-book"></i> إضافة مادة جديدة</h3>
                 <div class="form-row">
@@ -239,9 +231,7 @@
                 </div>
             </div>
             
-            <!-- قائمة المواد -->
             <div class="subjects-container" id="subjects-list">
-                <!-- سيتم إضافة المواد هنا ديناميكيًا -->
                 <div class="empty-state" id="empty-subjects">
                     <i class="fas fa-book-open"></i>
                     <h3>لا توجد مواد مضافة</h3>
@@ -249,7 +239,6 @@
                 </div>
             </div>
             
-            <!-- تحليل الأداء -->
             <div class="analysis-section">
                 <h3><i class="fas fa-chart-pie"></i> تحليل الأداء</h3>
                 <div class="analysis-grid">
@@ -280,12 +269,13 @@
             </div>
         </main>
 
-        <!-- الفوتر -->
         <footer>
             <div class="footer-content">
                 <div class="developer-info">
                     <h3>تطوير بواسطة : محمد الباقر</h3>
                     <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
+                    <p>طالب بجامعة الإمام جعفر الصادق<img src="assets/icons/عليه السلام.png" alt="عليه السلام" style="vertical-align: middle; width: 50px;"></p>
+                    <p>كلية التربية قسم اللغة الأنجليزية</p>
                     
                     <div class="social-links">
                         <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
@@ -302,6 +292,9 @@
                         </a>
                         <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
                             <i class="fab fa-github"></i>
+                        </a>
+                        <a href="policies.html" class="social-link" target="_blank" title="سياسات الاستخدام">
+                            <i class="fas fa-file-contract"></i>
                         </a>
                     </div>
                 </div>

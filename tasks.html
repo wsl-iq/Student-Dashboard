@@ -10,22 +10,13 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- الشريط العلوي -->
         <header>
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <h1>لوحة الطالب الذكية</h1>
             </div>
-            <div class="user-info">
-                <div class="user-avatar">م</div>
-                <div>
-                    <h3>الطالب : محمد الباقر</h3>
-                    <p>القسم : تربية لغة أنجليزية</p>
-                </div>
-            </div>
         </header>
 
-        <!-- التنقل -->
         <nav>
             <ul class="nav-list">
                 <li class="nav-item">
@@ -53,15 +44,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="policies.html" class="nav-link">
-                        <i class="fas fa-file-contract"></i>
-                        <span>سياسات الاستخدام</span>
+                    <a href="tables/schedule.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>جدول المحاضرات</span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- المحتوى الرئيسي -->
         <main>
             <div class="page-header">
                 <h2 class="page-title">
@@ -74,7 +64,6 @@
                 </button>
             </div>
             
-            <!-- نموذج إضافة واجب -->
             <div class="task-form" id="task-form">
                 <div class="form-row">
                     <div class="form-group">
@@ -137,7 +126,6 @@
                 </div>
             </div>
             
-            <!-- فلترة الواجبات -->
             <div class="filter-section">
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all">جميع الواجبات</button>
@@ -153,9 +141,7 @@
                 </div>
             </div>
             
-            <!-- قائمة الواجبات -->
             <div class="tasks-container" id="tasks-list">
-                <!-- سيتم إضافة الواجبات هنا ديناميكيًا -->
                 <div class="empty-state" id="empty-tasks">
                     <i class="fas fa-tasks"></i>
                     <h3>لا توجد واجبات مضافة</h3>
@@ -164,7 +150,6 @@
             </div>
         </main>
 
-        <!-- التنبيهات -->
         <div class="notification hidden" id="notification">
             <div class="notification-icon">
                 <i class="fas fa-exclamation"></i>
@@ -178,13 +163,13 @@
             </button>
         </div>
 
-        <!-- الفوتر -->
         <footer>
             <div class="footer-content">
                 <div class="developer-info">
                     <h3>تطوير بواسطة : محمد الباقر</h3>
                     <p>مطور برمجيات سطح المكتب و برامج تطبيقات الويب</p>
-                    
+                    <p>طالب بجامعة الإمام جعفر الصادق<img src="assets/icons/عليه السلام.png" alt="عليه السلام" style="vertical-align: middle; width: 50px;"></p>
+                    <p>كلية التربية قسم اللغة الأنجليزية</p>
                     <div class="social-links">
                         <a href="https://wsl-iq.github.io" class="social-link" target="_blank" title="الموقع الشخصي">
                             <i class="fas fa-globe"></i>
@@ -200,6 +185,9 @@
                         </a>
                         <a href="https://github.com/wsl-iq" class="social-link" target="_blank" title="github">
                             <i class="fab fa-github"></i>
+                        </a>
+                        <a href="policies.html" class="social-link" target="_blank" title="سياسات الاستخدام">
+                            <i class="fas fa-file-contract"></i>
                         </a>
                     </div>
                 </div>

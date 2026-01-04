@@ -1,0 +1,22 @@
+{
+  "user_preferences": {
+    "language": "ar",
+    "theme": "light",
+    "current_section": "A",
+    "current_day": "saturday",
+    "notifications_enabled": true,
+    "notification_time": "15"
+  },
+  "progress": {
+    "last_login": "2024-03-20T10:30:00",
+    "days_viewed": ["saturday", "sunday", "monday"],
+    "favorite_teachers": [],
+    "visited_count": 12
+  },
+  "academic_info": {
+    "college": "كلية التربية",
+    "department": "قسم اللغة الإنجليزية",
+    "year": "الأولى",
+    "sections": ["A", "B", "C", "D"]
+  }
+}

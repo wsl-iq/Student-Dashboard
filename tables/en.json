@@ -1,0 +1,74 @@
+{
+  "app": {
+    "title": "Weekly Lectures Schedule",
+    "subtitle": "Saturday - Sunday - Monday | Starting from 8:30 AM",
+    "developed_by": "Developed by: Mohammed Al-Baqer",
+    "footer_note": "Weekly Lectures Schedule - College of Education - English Department"
+  },
+  "navigation": {
+    "week_days": "Week Days",
+    "sections": "Study Sections",
+    "settings": "Settings",
+    "home": "Home"
+  },
+  "days": {
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday"
+  },
+  "sections": {
+    "A": "Section A - Room ASD3",
+    "B": "Section B - Room ASD4",
+    "C": "Section C - Room 64",
+    "D": "Section D - Karrada Martyrs Room"
+  },
+  "ui": {
+    "select_section": "Select Section",
+    "select_day": "Select Day",
+    "lecture": "lecture",
+    "lectures": "lectures",
+    "teacher": "Teacher",
+    "subject": "Subject",
+    "time": "Time",
+    "department": "Department",
+    "no_lectures": "No lectures",
+    "enjoy_rest": "Enjoy a day off",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "reset": "Reset"
+  },
+  "buttons": {
+    "language": "العربية",
+    "theme_light": "Light Mode",
+    "theme_dark": "Dark Mode",
+    "notifications_on": "Notifications On",
+    "notifications_off": "Notifications Off",
+    "save_progress": "Save Progress",
+    "export_schedule": "Export Schedule"
+  },
+  "settings": {
+    "general": "General",
+    "appearance": "Appearance",
+    "notifications": "Notifications",
+    "data": "Data",
+    "select_language": "Select Language",
+    "select_theme": "Select Theme",
+    "notification_before": "Notify before lecture by",
+    "minutes": "minutes",
+    "auto_save": "Auto Save",
+    "clear_data": "Clear Data",
+    "export_data": "Export Data"
+  },
+  "messages": {
+    "saved": "Saved successfully!",
+    "loading_error": "Error loading data",
+    "no_internet": "No internet connection",
+    "data_cleared": "Data cleared",
+    "export_success": "Exported successfully"
+  }
+}
