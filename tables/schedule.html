@@ -15,6 +15,46 @@
             <div class="header-content">
                 <h1 class="main-title animate-fade-in">جدول المحاضرات الأسبوعي</h1>
                 <p class="subtitle animate-fade-in-delayed">السبت - الأحد - الإثنين | بداية من 8:30 صباحاً</p>
+               
+                <a href="../index.html" class="back-to-home-btn">
+                    <i class="fas fa-home"></i>
+                    <span>العودة للصفحة الرئيسية</span>
+                </a>
+                <style>
+                .back-to-home-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 12px;
+                    padding: 8px 12px;
+                    background-color: #4A90E2;
+                    color: #fff;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    box-shadow: 0 6px 18px rgba(74,144,226,0.28);
+                    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
+                    animation: fadeInUp 0.6s ease forwards;
+                    opacity: 0.95;
+                    -webkit-tap-highlight-color: transparent;
+                }
+                .back-to-home-btn i { font-size: 1.05rem; }
+                .back-to-home-btn:hover,
+                .back-to-home-btn:focus {
+                    transform: translateY(-3px);
+                    box-shadow: 0 12px 30px rgba(74,144,226,0.18);
+                    background-color: #3a7bd6;
+                    outline: none;
+                }
+                .back-to-home-btn:active {
+                    transform: translateY(-1px);
+                    box-shadow: 0 6px 14px rgba(74,144,226,0.18);
+                }
+                @keyframes fadeInUp {
+                    from { opacity: 0; transform: translateY(8px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                </style>
                 
                 <div class="section-info" id="sectionInfo">
                     <div class="current-section">
@@ -276,7 +316,7 @@
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('📄 صفحة HTML محملة');
+        console.log('صفحة HTML محملة');
         
         function updateClock() {
             const timeElement = document.getElementById('currentTime');
@@ -305,7 +345,7 @@
             });
         });
         
-        console.log('✅ التهيئة المباشرة مكتملة');
+        console.log('التهيئة المباشرة مكتملة');
     });
     </script>
 </body>

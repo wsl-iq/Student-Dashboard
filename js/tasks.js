@@ -152,35 +152,45 @@ function addTask() {
     showNotification('تم بنجاح', 'تمت إضافة الواجب بنجاح');
 }
 
-// حذف واجب
 function deleteTask(index) {
-    if (confirm('هل أنت متأكد من حذف هذا الواجب؟')) {
-        tasks.splice(index, 1);
-        saveTasks();
-        loadTasks();
-        showNotification('تم الحذف', 'تم حذف الواجب بنجاح');
+    if (!confirm('هل أنت متأكد من حذف هذا الواجب؟')) return;
+
+    const idx = Number(index);
+    if (isNaN(idx)) return;
+
+    // Remove from data
+    tasks.splice(idx, 1);
+    saveTasks();
+
+    // Remove DOM card immediately if present
+    const btn = document.querySelector(`.delete-task[data-index="${index}"]`);
+    if (btn) {
+        const card = btn.closest('.task-card');
+        if (card) card.remove();
+    }
+
+    // Re-render to fix indices, filters and search
+    loadTasks();
+
+    showNotification('تم الحذف', 'تم حذف الواجب بنجاح');
+}
+
+// Persist tasks to localStorage
+function saveTasks() {
+    try {
+        localStorage.setItem('studentTasks', JSON.stringify(tasks));
+    } catch (e) {
+        console.error('Failed to save tasks:', e);
     }
 }
 
-function saveTasks() {
-    localStorage.setItem('studentTasks', JSON.stringify(tasks));
-    const blob = new Blob([JSON.stringify(tasks, null, 2)], { type: 'application/json' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'SaveTasks.json';
-    link.click();
-}
-
-// تحديث فلاتر الواجبات
 function updateTaskFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const taskCards = document.querySelectorAll('.task-card');
     
     filterButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            // إزالة النشاط من جميع الأزرار
             filterButtons.forEach(b => b.classList.remove('active'));
-            // إضافة النشاط للزر الحالي
             this.classList.add('active');
             
             const filter = this.getAttribute('data-filter');

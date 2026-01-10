@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Developer: Mohammed Al-Baqer
+# Copyright: Copyright (c) 2026
+# License: MIT License
+# Version: 1.0.0
 # Please note that this code or file is for developer use only as a result of performance testing.
+# This file is for testing the opening of a local web file and performance testing,
+# such as (RAM) and (CPU) consumption using developer tools (DevTools).
 
 import webview
 import platform
@@ -9,7 +14,7 @@ from datetime import datetime
 import os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-os.environ["WEBVIEW_HTML"] = "index.html"
+os.environ["WebViewHTML"] = "index.html"
 os.system("cls" if os.name == "nt" else "clear")
 
 S = "\033[0m"        # Reset
@@ -51,7 +56,7 @@ def DateTime():
     except Exception as e:
         return str(e)
     
-def banner():
+def Banner():
     __Developer__ = "Mohammed Al-Baqer"
     __Copyright__ = "Copyright (c) 2026"
     AscallArt = R + " ● " + Y + "●" + G + " ● " + W
@@ -63,7 +68,7 @@ def banner():
     ┃{B} Copyright  {W}│ {__Copyright__}{W}   ┃
     ┃{B} System     {W}│ {System()}{W}        ┃
     ┗────────────┻──────────────────────┛""")
-banner()
+Banner()
 
 
 def DevTools():
@@ -88,4 +93,3 @@ webview.create_window(
     draggable=True,
 )
 webview.start(debug=True)
-

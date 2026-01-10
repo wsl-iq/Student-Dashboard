@@ -1,5 +1,4 @@
  
-/* الأساسيات والمتغيرات */
 :root {
     --primary-dark: #1e3c72;
     --primary: #2a5298;
@@ -45,7 +44,6 @@ body {
     margin: 0;
 }
 
-/* الحاوية الرئيسية */
 .app-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -55,7 +53,6 @@ body {
     overflow: hidden;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.8s ease;
-    /* لون نص الازرار العلوية */
     --header-text-color: rgb(0, 0, 0);
 
 }
@@ -65,7 +62,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* الشريط العلوي */
 header {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: rgb(255, 255, 255);
@@ -121,7 +117,6 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* التنقل */
 nav {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     padding: 0.5rem 2rem;
@@ -180,14 +175,12 @@ nav {
     color: white;
 }
 
-/* عند التمرير أو في حالة التنقل النشط */
 .nav-link.active {
     background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink));
     color: white;
     font-weight: 600;
 }
 
-/* المحتوى الرئيسي */
 main {
     padding: 2rem;
     min-height: 70vh;
@@ -220,7 +213,6 @@ main {
     color: var(--primary);
 }
 
-/* الأزرار */
 .btn {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     color: rgb(255, 255, 255);
@@ -283,7 +275,6 @@ main {
     color: white;
 }
 
-/* النماذج */
 .form-row {
     display: flex;
     flex-wrap: wrap;
@@ -325,7 +316,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
 }
 
-/* الإختيار المخصص */
 .custom-select {
     position: relative;
 }
@@ -344,7 +334,6 @@ input:focus, select:focus, textarea:focus {
     color: var(--gray);
 }
 
-/* منتقي التاريخ والوقت */
 .date-picker, .time-picker {
     position: relative;
 }
@@ -362,7 +351,6 @@ input:focus, select:focus, textarea:focus {
     padding-left: 3rem;
 }
 
-/* أزرار الأولوية */
 .priority-buttons {
     display: flex;
     gap: 0.5rem;
@@ -400,7 +388,6 @@ input:focus, select:focus, textarea:focus {
     background-color: var(--success);
 }
 
-/* نماذج إدارة الواجبات */
 .task-form {
     background: white;
     border-radius: var(--border-radius);
@@ -470,7 +457,6 @@ input:focus, select:focus, textarea:focus {
     color: var(--gray);
 }
 
-/* بطاقات الواجبات */
 .tasks-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -646,7 +632,6 @@ input:focus, select:focus, textarea:focus {
     color: var(--success);
 }
 
-/* دفتر الدرجات */
 .grades-summary {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1143,7 +1128,6 @@ input:focus, select:focus, textarea:focus {
     color: var(--dark);
 }
 
-/* صفحة الملاحظات */
 .notes-page {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -1514,7 +1498,6 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 1.5rem;
 }
 
-/* الصفحة الرئيسية */
 .welcome-section {
     animation: fadeIn 1s ease;
 }
@@ -1695,7 +1678,6 @@ input:focus, select:focus, textarea:focus {
     line-height: 1.6;
 }
 
-/* الحالة الفارغة */
 .empty-state {
     text-align: center;
     padding: 4rem 1rem;
@@ -1721,7 +1703,6 @@ input:focus, select:focus, textarea:focus {
     line-height: 1.6;
 }
 
-/* التنبيهات */
 .notification {
     position: fixed;
     bottom: 2rem;
@@ -1797,7 +1778,6 @@ input:focus, select:focus, textarea:focus {
     color: var(--dark);
 }
 
-/* الفوتر */
 footer {
     background-color: var(--primary-dark);
     color: white;
@@ -1847,7 +1827,6 @@ footer {
     line-height: 1.5;
 }
 
-/* دعم الجوال */
 @media (max-width: 1024px) {
     .notes-page {
         grid-template-columns: 1fr;
@@ -1976,12 +1955,10 @@ footer {
     }
 }
 
-/* التخصيصات الإضافية */
 .hidden {
     display: none !important;
 }
 
-/* شرائط التمرير المخصصة */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -2000,8 +1977,7 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-dark);
 }
-/* تحسين القوائم المنسدلة للمحرر */
-/* تأكد أن الحاوية التي تحتوي على الأزرار نسبية لتثبيت الانبثاق فوقها دون التأثير على التخطيط */
+
 .editor-toolbar,
 .editor-actions,
 .category-dropdown,
@@ -2011,11 +1987,10 @@ footer {
     z-index: 1;
 }
 
-/* القوائم المنسدلة لادخال الروابط والصور: تبدو كنافذة منبثقة ثابتة أسفل المشغل، لا تدفع المحرر للأعلى */
 .link-dropdown,
 .image-dropdown {
     position: absolute;
-    top: calc(100% + 8px); /* افتح أسفل الزر بمسافة ثابتة */
+    top: calc(100% + 8px); 
     left: 0;
     background: #fff;
     border: 1px solid var(--gray-light);
@@ -2033,7 +2008,6 @@ footer {
     pointer-events: auto;
 }
 
-/* إذا كان العرض ضيقاً اجعل العرض مريحاً */
 @media (max-width: 420px) {
     .link-dropdown,
     .image-dropdown {
@@ -2044,7 +2018,6 @@ footer {
     }
 }
 
-/* تمنع ارتفاع المحتوى من دفع باقي العناصر: تمرير داخلي */
 .link-dropdown .dropdown-inner,
 .image-dropdown .dropdown-inner {
     display: flex;
@@ -2052,10 +2025,9 @@ footer {
     gap: 0.6rem;
     max-height: 320px;
     overflow-y: auto;
-    padding-right: 6px; /* مساحة لمؤشر التمرير */
+    padding-right: 6px; 
 }
 
-/* تحسين عناصر الإدخال داخل الانبثاق */
 .dropdown-inner label {
     font-size: 0.95rem;
     color: var(--primary-dark);
@@ -2073,7 +2045,6 @@ footer {
     background: #fff;
 }
 
-/* فاصل "أو" مرئي */
 .or-separator {
     text-align: center;
     margin: 0.45rem 0;
@@ -2095,7 +2066,6 @@ footer {
 .or-separator:before { left: 0; transform: translateY(-50%); }
 .or-separator:after  { right: 0; transform: translateY(-50%); }
 
-/* معاينة الصورة وأزرار الإجراءات */
 .image-preview-wrapper {
     margin-top: 0.5rem;
     text-align: center;
@@ -2122,7 +2092,6 @@ footer {
     font-size: 0.95rem;
 }
 
-/* تحسين عرض المحتوى في المشاهد (لا يتأثر بالانبثاق) */
 .note-viewer-content {
     line-height: 1.9;
     font-size: 1.05rem;
@@ -2136,8 +2105,20 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* تأثير دخول خفيف للانزلاق للأسفل */
 @keyframes dropdownFade {
     from { opacity: 0; transform: translateY(-6px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.progress-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-dark);
 }

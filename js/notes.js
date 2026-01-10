@@ -1,4 +1,3 @@
-// الملاحظات السريعة
 let notes = JSON.parse(localStorage.getItem('studentNotes')) || [];
 let currentEditingNote = null;
 let currentCategory = '';
@@ -9,14 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     setupTextFormatting();
     
-    // تعيين المحتوى القابل للتحرير
     document.getElementById('note-content').focus();
     
-    // تعيين التاريخ الافتراضي للتنبيهات
     checkForNotifications();
 });
 
-// تحميل الملاحظات
 function loadNotes() {
     const notesList = document.getElementById('notes-list-sidebar');
     const emptyNotes = document.querySelector('.empty-state-sidebar');
@@ -32,7 +28,6 @@ function loadNotes() {
     
     notesList.innerHTML = '';
     
-    // ترتيب الملاحظات من الأحدث إلى الأقدم
     notes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     
     notes.forEach((note, index) => {
@@ -40,7 +35,6 @@ function loadNotes() {
         notesList.appendChild(noteItem);
     });
     
-    // تحميل أول ملاحظة إذا كانت موجودة
     if (notes.length > 0) {
         viewNote(0);
     } else {
@@ -51,7 +45,6 @@ function loadNotes() {
     setupNoteFilters();
 }
 
-// إنشاء عنصر قائمة الملاحظات
 function createNoteListItem(note, index) {
     const item = document.createElement('div');
     item.className = 'note-item-sidebar';
@@ -59,12 +52,10 @@ function createNoteListItem(note, index) {
     item.dataset.category = note.category || '';
     item.dataset.important = note.important || false;
     
-    // تقليل المحتوى المعروض
     const previewContent = note.content.length > 100 
         ? note.content.substring(0, 100) + '...' 
         : note.content;
     
-    // إزالة علامات HTML مع الحفاظ على فواصل الأسطر
     const cleanContent = previewContent
         .replace(/<[^>]*>/g, ' ')
         .replace(/\s+/g, ' ')
@@ -83,30 +74,24 @@ function createNoteListItem(note, index) {
     return item;
 }
 
-// عرض ملاحظة
 function viewNote(index) {
     if (index < 0 || index >= notes.length) return;
     
     const note = notes[index];
     currentEditingNote = index;
     
-    // إخفاء المحرر وعرض المشاهد
     document.getElementById('notes-editor').classList.add('hidden');
     document.getElementById('note-viewer').classList.remove('hidden');
     document.getElementById('notes-empty').classList.add('hidden');
     
-    // تحديث محتوى المشاهد
     document.getElementById('viewer-title').textContent = note.title || 'بدون عنوان';
     document.getElementById('viewer-date').textContent = formatDate(note.updatedAt || note.createdAt, true);
     
-    // عرض المحتوى مع تحسين الأمان
     let safeContent = note.content;
-    // تنظيف المحتوى من السكريبت الضار
     safeContent = safeContent.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
     
     document.getElementById('viewer-content').innerHTML = safeContent;
     
-    // تحديث الفئة والأهمية
     const categoryEl = document.getElementById('viewer-category');
     const importantEl = document.getElementById('viewer-important');
     
@@ -124,7 +109,6 @@ function viewNote(index) {
         importantEl.style.display = 'none';
     }
     
-    // تحديث العنصر النشط في القائمة
     document.querySelectorAll('.note-item-sidebar').forEach(item => {
         item.classList.remove('active');
     });
@@ -135,53 +119,40 @@ function viewNote(index) {
     }
 }
 
-// تحرير ملاحظة
 function editNote() {
     if (currentEditingNote === null) return;
     
     const note = notes[currentEditingNote];
     
-    // تعبئة النموذج
     document.getElementById('note-title').value = note.title || '';
     document.getElementById('note-content').innerHTML = note.content;
     currentCategory = note.category || '';
     isImportant = note.important || false;
     
-    // تحديث أزرار التحرير
     updateEditorButtons();
     
-    // إخفاء المشاهد وإظهار المحرر
     document.getElementById('note-viewer').classList.add('hidden');
     document.getElementById('notes-editor').classList.remove('hidden');
-    document.getElementById('notes-empty').classList.add('hidden');
-    
-    // التركيز على المحتوى
+    document.getElementById('notes-empty').classList.add('hidden');    
     document.getElementById('note-content').focus();
 }
 
-// إنشاء ملاحظة جديدة
 function createNewNote() {
     currentEditingNote = null;
     currentCategory = '';
     isImportant = false;
     
-    // إعادة تعيين النموذج
     document.getElementById('note-title').value = '';
     document.getElementById('note-content').innerHTML = '';
     
-    // تحديث أزرار التحرير
     updateEditorButtons();
     
-    // إخفاء المشاهد وإظهار المحرر
     document.getElementById('note-viewer').classList.add('hidden');
     document.getElementById('notes-empty').classList.add('hidden');
-    document.getElementById('notes-editor').classList.remove('hidden');
-    
-    // التركيز على العنوان
+    document.getElementById('notes-editor').classList.remove('hidden');    
     document.getElementById('note-title').focus();
 }
 
-// حفظ ملاحظة
 function saveNote() {
     const title = document.getElementById('note-title').value.trim();
     const content = document.getElementById('note-content').innerHTML.trim();
@@ -210,14 +181,15 @@ function saveNote() {
     saveNotes();
     loadNotes();
     
-    // عرض الملاحظة المحفوظة
     const noteIndex = currentEditingNote !== null ? currentEditingNote : notes.length - 1;
     viewNote(noteIndex);
     
     showNotification('تم بنجاح', `تم ${currentEditingNote !== null ? 'تعديل' : 'حفظ'} الملاحظة بنجاح`);
+    currentEditingNote = noteIndex;
+    updateQuickStats();
+    loadNotes();
 }
 
-// حذف ملاحظة
 function deleteNote() {
     if (currentEditingNote === null) return;
     
@@ -226,7 +198,6 @@ function deleteNote() {
         saveNotes();
         loadNotes();
         
-        // عرض حالة فارغة أو الملاحظة التالية
         if (notes.length > 0) {
             viewNote(Math.min(currentEditingNote, notes.length - 1));
         } else {
@@ -238,12 +209,10 @@ function deleteNote() {
     }
 }
 
-// حفظ الملاحظات
 function saveNotes() {
     localStorage.setItem('studentNotes', JSON.stringify(notes));
 }
 
-// تحديث أزرار المحرر
 function updateEditorButtons() {
     const importantBtn = document.getElementById('toggle-important');
     
@@ -255,7 +224,6 @@ function updateEditorButtons() {
         importantBtn.style.color = '';
     }
     
-    // تحديث القائمة المنسدلة للفئة
     const categoryOptions = document.querySelectorAll('.category-option');
     categoryOptions.forEach(option => {
         option.classList.remove('active');
@@ -265,7 +233,6 @@ function updateEditorButtons() {
     });
 }
 
-// إعداد البحث في الملاحظات
 function setupNoteSearch() {
     const searchInput = document.getElementById('search-notes');
     if (!searchInput) return;
@@ -287,7 +254,6 @@ function setupNoteSearch() {
     });
 }
 
-// إعداد فلاتر الملاحظات
 function setupNoteFilters() {
     const filterButtons = document.querySelectorAll('.notes-filters .filter-btn');
     const noteItems = document.querySelectorAll('.note-item-sidebar');
@@ -604,7 +570,6 @@ function setupEventListeners() {
             document.getElementById('category-dropdown').classList.add('hidden');
         }
         
-        // إغلاق قائمة أحجام الخط
         if (!e.target.closest('.tool-btn[data-format="fontSize"]') && !e.target.closest('.font-size-dropdown')) {
             document.querySelector('.font-size-dropdown').classList.add('hidden');
         }
