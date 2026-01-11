@@ -1,46 +1,26 @@
 # Code of Conduct
 
-## Our Pledge
+In order to maintain a welcoming and respectful environment for everyone, please follow these rules:
 
-We are committed to providing a welcoming and respectful environment
-for everyone participating in this project.
-
----
+## General Guidelines
+- Show respect to all contributors and users.
+- No harassment, insults, or discrimination.
+- Keep discussions constructive and professional.
 
 ## Expected Behavior
-
-- Be respectful and professional  
-- Accept constructive criticism  
-- Use inclusive and polite language  
-- Help others and share knowledge  
-
----
+- Use friendly and inclusive language.
+- Accept constructive criticism gracefully.
+- Collaborate to make the project better.
 
 ## Unacceptable Behavior
-
-- Harassment, discrimination, or hate speech  
-- Offensive or abusive language  
-- Personal attacks or threats  
-- Publishing private information  
-
----
-
-## Enforcement
-
-Project maintainers are responsible for enforcing this code of conduct.
-Any unacceptable behavior may result in:
-- Warning  
-- Temporary or permanent ban from the project  
-
----
+- Use of offensive or aggressive language.
+- Discrimination of any kind (race, gender, religion, etc.).
+- Posting harmful or inappropriate content.
 
 ## Reporting
-
-If you experience or witness unacceptable behavior,
-please report it to the project maintainer via GitHub Issues or private contact.
+If you experience or witness unacceptable behavior, please report it through **Issues** or by contacting the project maintainers directly.
 
 ---
 
-## Attribution
 
-This Code of Conduct is inspired by the Contributor Covenant.
+Together we can build a safe, supportive, and creative community 🤝
