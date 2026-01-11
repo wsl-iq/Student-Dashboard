@@ -35,3 +35,14 @@ A simple, clean student dashboard that helps organize study life and track acade
 
 ## **Notes**
 - Lightweight, privacy-first, and easy to use. Ideal for daily study organization and quick performance checks.
+
+  ---
+
+## **Installation & Usage**
+
+| system | Supported |
+|--------|----------------|
+| Windows | ❌ |
+| macOS |  ❌ |
+| Linux | ❌ |
+| Android | Download the latest release from the [Releases](https://github.com/wsl-iq/Student-Dashboard/releases/download/v1.0.0/default.apk) page. Extract the ZIP file and run `Student Dashboard.apk`. |
